@@ -1,0 +1,189 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/app/assets/fonts/DarkerGrotesque-Black.ttf",
+      "sha1": "5f2227e216179f1bddfaa850a95e203ca5034781"
+    },
+    {
+      "path": "src/app/assets/fonts/DarkerGrotesque-Bold.ttf",
+      "sha1": "a03dc459a3695c29cac2667600e92fedae8bc3f3"
+    },
+    {
+      "path": "src/app/assets/fonts/DarkerGrotesque-ExtraBold.ttf",
+      "sha1": "c296670c5cd504e80fae913243c12f443cb4c6ea"
+    },
+    {
+      "path": "src/app/assets/fonts/DarkerGrotesque-Light.ttf",
+      "sha1": "7f942f8a3eda54657be88f177ea78b832e4a4bdd"
+    },
+    {
+      "path": "src/app/assets/fonts/DarkerGrotesque-Medium.ttf",
+      "sha1": "4a78b202872edfa9fa2f1bb787a9efd282db4d30"
+    },
+    {
+      "path": "src/app/assets/fonts/DarkerGrotesque-Regular.ttf",
+      "sha1": "911b52a41167cefd8a53ed4f7d5bd35876df27e8"
+    },
+    {
+      "path": "src/app/assets/fonts/DarkerGrotesque-SemiBold.ttf",
+      "sha1": "861e01340ac865e9f1dd922ea6a2d24c4729cbea"
+    },
+    {
+      "path": "src/app/assets/image/carte.png",
+      "sha1": "0542849d84a542c2e66dd00a63067896c507f1c1"
+    },
+    {
+      "path": "src/app/assets/image/color_map.png",
+      "sha1": "a96e15d77e8ba74a17ccd3f06675bd11f43bfda2"
+    },
+    {
+      "path": "src/app/assets/image/ellipseaccueil.png",
+      "sha1": "c74d227ab55d32aaa9c48805c556d79dbacd1038"
+    },
+    {
+      "path": "src/app/assets/image/ellipseetape1.png",
+      "sha1": "f0ec5a67d12caff122e02a29f57436757c5bfb3d"
+    },
+    {
+      "path": "src/app/assets/image/ellipseetape2.png",
+      "sha1": "8e180deacd9e60acce4661551417531dcd6c3d7f"
+    },
+    {
+      "path": "src/app/assets/image/ellipseetape3.png",
+      "sha1": "8d41351c97a2800b04b8521eb69e3fa167d4e68e"
+    },
+    {
+      "path": "src/app/assets/image/ellipselaunchscreen.png",
+      "sha1": "84219898f2e0d2337c5a291921702088a615316e"
+    },
+    {
+      "path": "src/app/assets/image/emoji_smile/emoji_smile.vrx",
+      "sha1": "2f721ec96b5294794c35e98652763812991bd5d9"
+    },
+    {
+      "path": "src/app/assets/image/emoji_smile/emoji_smile_diffuse.png",
+      "sha1": "901314bd1551f2c5a3e15a8f553a32321aa67e55"
+    },
+    {
+      "path": "src/app/assets/image/emoji_smile/emoji_smile_normal.png",
+      "sha1": "0a5f09fb9241e44196ab857639663503cad95d09"
+    },
+    {
+      "path": "src/app/assets/image/emoji_smile/emoji_smile_specular.png",
+      "sha1": "0a4cce2bbf8e252cd5f387b09f05efbf20dd6784"
+    },
+    {
+      "path": "src/app/assets/image/emoji_smile/touriut.png",
+      "sha1": "a9410143bb304a4b0007223df506c310c5ac4596"
+    },
+    {
+      "path": "src/app/assets/image/iut.bmp",
+      "sha1": "d561b28a0e0bd07531102d09763eb53bb52572f4"
+    },
+    {
+      "path": "src/app/assets/image/iut.html",
+      "sha1": "9a061bd4a92b9138d7de41d8a712fec32b7e548f"
+    },
+    {
+      "path": "src/app/assets/image/iut.jpg",
+      "sha1": "9001c96ca26430e0035a1dde3836d38e71888d21"
+    },
+    {
+      "path": "src/app/assets/image/logo_astramedia_titre_white2.png",
+      "sha1": "1941953ceb72331c595934dff5b48393be96d3ee"
+    },
+    {
+      "path": "src/app/assets/image/logo_black.png",
+      "sha1": "1f019cb2f56750551a08e28f94bdeea5ea36cd88"
+    },
+    {
+      "path": "src/app/assets/image/logo_cosmos.png",
+      "sha1": "e9a30c5fd1caaa9bd8a0faa789135227b1d3c3e6"
+    },
+    {
+      "path": "src/app/assets/image/logo_up13_noirs.png",
+      "sha1": "e2b38fb63dd4631a87b6b338c2d2ddfc19267362"
+    },
+    {
+      "path": "src/app/assets/image/logo_white.png",
+      "sha1": "6a93b4f90630cf20f7e661d54bc829c498a9354b"
+    },
+    {
+      "path": "src/app/assets/image/normal_map_opengl.png",
+      "sha1": "abed5cfa885546fda60023b061850de9ccc79ee8"
+    },
+    {
+      "path": "src/app/assets/image/QrCode/qr_code.png",
+      "sha1": "3e8216d3574d84ce5fe286c66f2c041dc5d2a91f"
+    },
+    {
+      "path": "src/app/assets/image/QrCode/qr_code_filtre.png",
+      "sha1": "dddddb86fa9e1e85519ea3806ce5cf0ab102eb95"
+    },
+    {
+      "path": "src/app/assets/image/QrCode/qr_code_tour.png",
+      "sha1": "5968513d7413108c2e5cb78ffeb9faabb201d649"
+    },
+    {
+      "path": "src/app/assets/image/res/blackpanther.jpg",
+      "sha1": "cf139f67aa95b31e7c92a6c2bd390dc355717c75"
+    },
+    {
+      "path": "src/app/assets/image/res/diffuse_cube.dds",
+      "sha1": "5f13ec7e3e70590207e8ceea0d6332a04f9a37bf"
+    },
+    {
+      "path": "src/app/assets/image/res/ibl_brdf_lut.dds",
+      "sha1": "0481736267c965bab7720303adbd159e794def39"
+    },
+    {
+      "path": "src/app/assets/image/res/object_bpanther_anim.fbx",
+      "sha1": "1824e8f37f0d7043b3005d402414974920442e8d"
+    },
+    {
+      "path": "src/app/assets/image/res/object_bpanther_anim.vrx",
+      "sha1": "24f570c7faf9fdda02da9b95a857cc3f53b1e469"
+    },
+    {
+      "path": "src/app/assets/image/res/object_bpanther_base_color.png",
+      "sha1": "178428c596943e149418fc75e8bf8ab63375885f"
+    },
+    {
+      "path": "src/app/assets/image/res/object_bpanther_metallic.png",
+      "sha1": "5ba6ff898e29b5457410778ce36f38c1d6396ef1"
+    },
+    {
+      "path": "src/app/assets/image/res/object_bpanther_mixed_ao.png",
+      "sha1": "353cbb1bf3fe8c36b3af8d45c300acb43fd26c8c"
+    },
+    {
+      "path": "src/app/assets/image/res/object_bpanther_normal_opengl.png",
+      "sha1": "a561f920f25117afd5c23873ca926f7a121e1a86"
+    },
+    {
+      "path": "src/app/assets/image/res/object_bpanther_roughness.png",
+      "sha1": "7249ed984b889d96c3d51381968017724bc60c1e"
+    },
+    {
+      "path": "src/app/assets/image/res/specular_cube.dds",
+      "sha1": "2d4cc90d2aaa506e4c16cb1a2f44298437c0c728"
+    },
+    {
+      "path": "src/app/assets/image/roughness_map.png",
+      "sha1": "d20821c0d2d2338f80e643395d8976890741ec4d"
+    },
+    {
+      "path": "src/app/assets/image/texte_astramedia_logo.png",
+      "sha1": "96b7a63c3f0f57124ffe05d648486464437890c4"
+    },
+    {
+      "path": "src/app/assets/image/touriut.mtl",
+      "sha1": "21e2325b2587451cc731dd1936dbd3ab09a23a27"
+    },
+    {
+      "path": "src/app/assets/image/touriut.obj",
+      "sha1": "397700b3f5ee1bc35a20b3f9849ef3b94d9d39f3"
+    }
+  ]
+}
