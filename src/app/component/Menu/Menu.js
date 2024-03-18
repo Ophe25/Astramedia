@@ -61,11 +61,11 @@ class Menu extends React.Component {
                         style={styles.bouton_text}
                         onPress={() => {
                             this.props.navigation.navigate("Accueil")
-                        }}
-                    >
+                        }}                    >
                         Changer de parcours
                     </Text>
-                    <Text style={[styles.bouton_text, { color: 'red' }]}>Quitter la session</Text>
+                    <Text
+                        style={[styles.bouton_text, { color: 'red' }]}>Quitter la session</Text>
                 </View>
             </View>
         );

@@ -17,29 +17,28 @@ this.styles = StyleSheet.create({
 class Etape3 extends React.Component {
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: '#03030E', padding: 20 }}>
+            <View style={{ flex: 1, backgroundColor: '#03030E', padding: 20, paddingBottom: 50 }}>
 
                 <Image
                     source={require('../../assets/image/ellipseetape3.png')}
                     style={{ position: 'absolute', right: 0 }}
                 />
 
-                <View style={{ flex: 1, paddingVertical: 90, }}>
 
-                    <View style={{ justifyContent: 'center', flex: 5 }}>
-                        <Icon
-                            name="rocket-outline"
-                            size={30}
-                            color={'#fff'}
-                            style={{ textAlign: 'center', paddingBottom: 10, paddingBottom: 30 }}
-                        />
-                        <Text style={{ color: 'white', textAlign: 'center' }}>Plongez dans notre univers</Text>
-                        <Text style={{ color: 'white', textAlign: 'center' }}>
-                            Plongez dans un monde où l’éducation se mèle à l’innovation !
-                        </Text>
-                    </View>
+                <View style={{ justifyContent: 'center', flex: 5, paddingVertical: 90 }}>
+                    <Icon
+                        name="rocket-outline"
+                        size={30}
+                        color={'#fff'}
+                        style={{ textAlign: 'center', paddingBottom: 10, paddingBottom: 30 }}
+                    />
+                    <Text style={{ color: 'white', textAlign: 'center' }}>Plongez dans notre univers</Text>
+                    <Text style={{ color: 'white', textAlign: 'center' }}>
+                        Plongez dans un monde où l’éducation se mèle à l’innovation !
+                    </Text>
+                </View>
 
-                    {/* <View style={{ justifyContent: 'flex-end', flex: 1 }}>
+                {/* <View style={{ justifyContent: 'flex-end', flex: 1 }}>
                         <CustomButton
                             backgroundColor='rgba(255, 255, 255, 0.1)'
                             title="C'est parti !"
@@ -50,18 +49,15 @@ class Etape3 extends React.Component {
                             }}
                         />
                     </View> */}
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <Button
-                            onPress={() => this.props.navigation.goBack()}
-                        >Précédent</Button>
-                        <Button
-                            onPress={() => this.props.navigation.navigate("Accueil")}
-                        >C'est parti !</Button>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                    <Button
+                        onPress={() => this.props.navigation.goBack()}
+                    >Précédent</Button>
+                    <Button
+                        onPress={() => this.props.navigation.navigate("Accueil")}
+                    >C'est parti !</Button>
 
-                    </View>
                 </View>
-
-
             </View>
 
         );

@@ -60,6 +60,8 @@ class HelloWorldAR extends React.Component {
 
     // }
 
+    // Cette fonction sert à vérifier si l'initialisation de la réalité augmentée est effectuée
+
     _onTrackingUpdated = (state, reason) => {
         // if the state changes to "TRACKING_NORMAL" for the first time, then
         // that means the AR session has initialized!
@@ -76,17 +78,22 @@ class HelloWorldAR extends React.Component {
         return (
             <>
                 {this.state.IsOpen ?
+                    // Scène de réalité augmentée si la tour de l'iut n'est pas chargée
                     <ViroARScene >
+                        {/* Texte Initialisation en cours en RA */}
                         <ViroText transformBehaviors={'billboard'} style={styles.helloWorldTextStyle} text="Hello!" position={[0, 0, -1]} />
                     </ViroARScene>
                     :
+                    // Scène tour iut RA
                     <ViroARScene onTrackingUpdated={this._onTrackingUpdated}>
                         <ViroAmbientLight color={"#aaaaaa"} influenceBitMask={1} />
+                        {/* reconnaissance QR Code */}
                         <ViroARImageMarker target={"target"} onAnchorFound={() => this.props.visible()}>
                         </ViroARImageMarker>
-
+                        {/* Objets mis en scène lors de la reconnaissance du QR Code */}
                         <ViroARImageMarker target={"targetOne"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND")}>
                             <ViroNode>
+                                {/* 1ere lumière */}
                                 <ViroSpotLight
                                     innerAngle={5}
                                     outerAngle={90}
@@ -96,6 +103,7 @@ class HelloWorldAR extends React.Component {
                                     castsShadow={true}
                                 />
 
+                                {/* 2e lumière */}
                                 <ViroSpotLight
                                     innerAngle={5}
                                     outerAngle={45}
@@ -109,7 +117,7 @@ class HelloWorldAR extends React.Component {
                                     shadowFarZ={5}
                                     shadowOpacity={.7}
                                 />
-
+                                {/* Objet 3D */}
                                 <Viro3DObject
                                     source={require('../assets/image/touriut.obj')}
                                     width={150}
@@ -124,14 +132,6 @@ class HelloWorldAR extends React.Component {
                                     rotation={[-90, 0, 40]}
                                 />
 
-                                {/* <ViroQuad
-                                    rotation={[-90, 0, 0]}
-                                    width={.5}
-                                    height={.5}
-                                    arShadowReceiver={true}
-                                    lightReceivingBitMask={2}
-                                /> */}
-
                             </ViroNode>
                         </ViroARImageMarker>
                     </ViroARScene >
@@ -143,6 +143,7 @@ class HelloWorldAR extends React.Component {
 
 }
 
+//Initialisation des cibles
 
 ViroARTrackingTargets.createTargets({
     targetOne: {

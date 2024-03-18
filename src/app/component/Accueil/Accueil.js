@@ -19,25 +19,16 @@ class Accueil extends React.Component {
 
 
     render() {
-        const { commande, displayDetailForCommande } = this.props;
-        // console.log(commande)
         return (
             <>
                 {this.state.isOpen ?
                     <Menu onPress={() => this.setState({ isOpen: false })} />
                     :
                     <View style={{ flex: 1, backgroundColor: '#03030E', padding: 20, paddingBottom: 50 }}>
-                        {/* <MenuOutlinedIcon /> */}
                         <Image
                             source={require('../../assets/image/ellipseaccueil.png')}
                             style={{ position: 'absolute', bottom: 0 }}
                         />
-                        {/*<View style={{ flex: 1, justifyContent: 'center', marginTop: 150 }}>
-                    <Image
-                        source={require('../../assets/image/etape1.png')}
-                        style={{ height: 200, width: 200, alignSelf: 'center', justifyContent: 'center', paddingBottom: 20 }}
-        />
-                </View>*/}
                         <View
                             style={{
                                 flex: 1,

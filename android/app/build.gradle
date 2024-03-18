@@ -189,6 +189,8 @@ dependencies {
   implementation project(path: ':react_viro')
   implementation project(path: ':viro_renderer')
   implementation 'com.google.protobuf.nano:protobuf-javanano:3.0.0-alpha-7'
+  implementation 'com.google.android.material:material:1.6.0'
+
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
