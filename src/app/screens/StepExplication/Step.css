@@ -1,0 +1,17 @@
+.titleEtapes {
+    font-family: 'DarkerGrotesque-Bold';
+    font-weight: 400px;
+    letter-spacing: 0.5px;
+    line-height: 52px;
+    font-size: 30px;
+    color: "#fff"
+}
+
+.textEtapes {
+    font-family: 'DarkerGrotesque-Regular';
+    font-weight: 400px;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    font-size: 18px;
+    color: "#fff"
+}
