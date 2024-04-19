@@ -10,17 +10,15 @@ class ButtonMenu extends React.Component {
         const { commande, displayDetailForCommande } = this.props;
         return (
             <View
-                style={{
-                    // flex: 1,
-                    // alignItems: 'flex-end',
-                    position: 'absolute',
-                    top: 10,
-                    left: 10,
+                style={[{
+                    position: this.props.relative ? 'relative' : 'absolute',
+                    top: this.props.relative ? 0 : 10,
+                    left: this.props.relative ? 0 : 10,
                     zIndex: 1,
                     backgroundColor: this.props.background ? "rgba(255,255,255, 0.30)" : "rgba(255,255,255, 0)",
-                    padding: 5,
+                    padding: this.props.relative ? 0 : 5,
                     borderRadius: 30
-                }}
+                }, this.props.style ? this.props.style : {}]}
             >
                 <Icon
                     name="menu"

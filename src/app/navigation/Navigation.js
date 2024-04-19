@@ -9,6 +9,10 @@ import Menu from '../component/CustomComponent/Menu';
 import Step1 from '../screens/StepExplication/Step1';
 import Step2 from '../screens/StepExplication/Step2';
 import Step3 from '../screens/StepExplication/Step3';
+import History from '../screens/DescriptionHistory';
+import Crea from '../screens/Crea';
+import Comm from '../screens/Comm';
+import Dev from '../screens/Dev';
 
 export default function Navigation(props) {
     return (
@@ -64,6 +68,34 @@ const MainStackScreen = (props) => (
                 header: () => null,
             }}
         />
+        <MainStack.Screen
+            name="Dev"
+            component={Dev}
+            options={{
+                header: () => null,
+            }}
+        />
+        <MainStack.Screen
+            name="Comm"
+            component={Comm}
+            options={{
+                header: () => null,
+            }}
+        />
+        <MainStack.Screen
+            name="Crea"
+            component={Crea}
+            options={{
+                header: () => null,
+            }}
+        />
+        <MainStack.Screen
+            name="History"
+            component={History}
+            options={{
+                header: () => null,
+            }}
+        />
 
 
     </MainStack.Navigator>
@@ -101,4 +133,51 @@ const StepStackScreen = (props) => (
 
     </StepStack.Navigator>
 
+);
+
+const OffLineStack = createNativeStackNavigator();
+const OffLineStackScreen = (props) => (
+    <OffLineStack.Navigator
+        initialRouteName="Menu"
+        screenOptions={{
+            headerShown: false,
+        }}
+    >
+        <OffLineStack.Screen
+            name="Menu"
+            component={Menu}
+            options={{
+                header: () => null,
+            }}
+        />
+        <OffLineStack.Screen
+            name="Dev"
+            component={Dev}
+            options={{
+                header: () => null,
+            }}
+        />
+        <OffLineStack.Screen
+            name="Comm"
+            component={Comm}
+            options={{
+                header: () => null,
+            }}
+        />
+        <OffLineStack.Screen
+            name="Crea"
+            component={Crea}
+            options={{
+                header: () => null,
+            }}
+        />
+        <OffLineStack.Screen
+            name="History"
+            component={History}
+            options={{
+                header: () => null,
+            }}
+        />
+
+    </OffLineStack.Navigator>
 );

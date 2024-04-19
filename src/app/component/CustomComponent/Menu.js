@@ -1,12 +1,14 @@
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
-import { Button, Text } from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
+import { Text } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import CustomButtonMenu from './CustomButtonMenu';
 
 
 class Menu extends React.Component {
 
     render() {
+        let props = this.props.props;
         return (
             <View style={{ flex: 1, backgroundColor: '#03030E', justifyContent: 'center' }}>
                 {/* Vue pour fermer le menu */}
@@ -30,41 +32,59 @@ class Menu extends React.Component {
                     {/* 1ere ligne de boutons */}
                     <View style={styles.Ligne_de_bouton}>
                         {/* Bouton Développement web */}
-                        <View style={[styles.Bouton, { marginRight: 10 }]}>
-                            <Text style={styles.text}>Développement web</Text>
-                        </View>
+                        <CustomButtonMenu
+                            ViewStyle={{ marginRight: 10 }}
+                            onPress={() => {
+                                this.props.onPress
+                                props.navigation.navigate("Dev")
+                            }}
+                            title={'Développement web'}
+                        />
                         {/* Bouton Graphisme */}
-                        <View style={[styles.Bouton, { marginLeft: 10 }]}>
-                            <Text style={styles.text}>Graphisme</Text>
-                        </View>
+                        <CustomButtonMenu
+                            ViewStyle={{ marginLeft: 10 }}
+                            onPress={() => {
+                                this.props.onPress
+                                props.navigation.navigate("Crea")
+                            }}
+                            title={'Création Numérique'}
+                        />
                     </View>
 
                     {/* 2e ligne de boutons */}
                     <View style={styles.Ligne_de_bouton}>
                         {/* Bouton Communication & Strat UX */}
-                        <View style={[styles.Bouton, { marginRight: 10 }]}>
-                            <Text style={styles.text}>Communication & Strat UX</Text>
-                        </View>
+                        <CustomButtonMenu
+                            ViewStyle={{ marginRight: 10 }}
+                            onPress={() => {
+                                this.props.onPress
+                                props.navigation.navigate("Comm")
+                            }}
+                            title={'Communication & Strat UX'}
+                        />
                         {/* Bouton Licence Jeux vidéos */}
-                        <View style={[styles.Bouton, { marginLeft: 10 }]}>
-                            <Text style={styles.text}>Licence Jeux vidéos</Text>
-                        </View>
-                    </View>
-
-                    {/* bouton Projets étudiants */}
-                    <View style={[styles.Bouton, { alignSelf: 'center' }]}>
-                        <Text style={styles.text}>Projets étudiants</Text>
+                        <CustomButtonMenu
+                            ViewStyle={{ marginLeft: 10 }}
+                            title={'Licence Jeux vidéos'}
+                        />
                     </View>
                 </View>
                 <View style={{ flex: 1 }}>
                     <Text
                         style={styles.bouton_text}
-                        onPress={() => {
-                            this.props.navigation.navigate("Home")
-                        }}                    >
+                        onPress={this.props.Home ?
+                            this.props.onPress : () => {
+                                props.navigation.navigate("Home")
+                            }}
+                    >
                         Changer de parcours
                     </Text>
                     <Text
+                        onPress={this.props.Home ?
+                            this.props.onPress : () => {
+                                props.navigation.navigate("Home")
+                            }}
+
                         style={[styles.bouton_text, { color: 'red' }]}>Quitter la session</Text>
                 </View>
             </View>

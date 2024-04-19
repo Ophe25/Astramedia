@@ -9,7 +9,7 @@ import Menu from '../component/CustomComponent/Menu';
 
 
 
-class Home extends React.Component {
+class History extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,7 +22,7 @@ class Home extends React.Component {
         return (
             <>
                 {this.state.isOpen ?
-                    <Menu Home props={this.props} onPress={() => this.setState({ isOpen: false })} />
+                    <Menu onPress={() => this.setState({ isOpen: false })} />
                     :
                     <View style={{ flex: 1, backgroundColor: '#03030E', padding: 20, paddingBottom: 50 }}>
                         <Image
@@ -81,4 +81,4 @@ class Home extends React.Component {
     }
 }
 
-export default (Home);
+export default (History);
