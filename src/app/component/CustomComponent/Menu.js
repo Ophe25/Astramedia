@@ -3,14 +3,23 @@ import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import CustomButtonMenu from './CustomButtonMenu';
+import { setMenuIsOpen } from '../../redux/reducers/introductionReducer2';
+import { connect } from 'react-redux';
+import ButtonMenu from './ButtonMenu';
+import store from '../../redux/store/store';
+import { useNavigation } from '@react-navigation/core'
 
 
-class Menu extends React.Component {
-
-    render() {
-        let props = this.props.props;
-        return (
-            <View style={{ flex: 1, backgroundColor: '#03030E', justifyContent: 'center' }}>
+function Menu(props) {
+    const navigation = useNavigation();
+    return (
+        !props.menuIsOpen ? <ButtonMenu
+            onPress={() => {
+                console.log('test', props)
+                store.dispatch(setMenuIsOpen(true))
+            }}
+        /> :
+            <View style={{ flex: 1, position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, zIndex: 1, backgroundColor: '#03030E', justifyContent: 'center' }}>
                 {/* Vue pour fermer le menu */}
                 <View
                     style={{
@@ -24,7 +33,7 @@ class Menu extends React.Component {
                         name="close"
                         size={30}
                         color="white"
-                        onPress={this.props.onPress}
+                        onPress={() => store.dispatch(setMenuIsOpen(false))}
                     />
                 </View>
                 {/* Boutons des différents parcours */}
@@ -35,8 +44,8 @@ class Menu extends React.Component {
                         <CustomButtonMenu
                             ViewStyle={{ marginRight: 10 }}
                             onPress={() => {
-                                this.props.onPress
-                                props.navigation.navigate("Dev")
+                                navigation.navigate("Dev")
+                                setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
                             }}
                             title={'Développement web'}
                         />
@@ -44,8 +53,9 @@ class Menu extends React.Component {
                         <CustomButtonMenu
                             ViewStyle={{ marginLeft: 10 }}
                             onPress={() => {
-                                this.props.onPress
-                                props.navigation.navigate("Crea")
+                                navigation.navigate("Crea")
+                                setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
+
                             }}
                             title={'Création Numérique'}
                         />
@@ -57,8 +67,9 @@ class Menu extends React.Component {
                         <CustomButtonMenu
                             ViewStyle={{ marginRight: 10 }}
                             onPress={() => {
-                                this.props.onPress
-                                props.navigation.navigate("Comm")
+                                navigation.navigate("Comm")
+                                setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
+
                             }}
                             title={'Communication & Strat UX'}
                         />
@@ -72,24 +83,27 @@ class Menu extends React.Component {
                 <View style={{ flex: 1 }}>
                     <Text
                         style={styles.bouton_text}
-                        onPress={this.props.Home ?
-                            this.props.onPress : () => {
-                                props.navigation.navigate("Home")
+                        onPress={
+                            () => {
+                                navigation.navigate("Home")
+                                setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
+
                             }}
                     >
                         Changer de parcours
                     </Text>
                     <Text
-                        onPress={this.props.Home ?
-                            this.props.onPress : () => {
-                                props.navigation.navigate("Home")
+                        onPress={
+                            () => {
+                                navigation.navigate("Home")
+                                setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
                             }}
 
                         style={[styles.bouton_text, { color: 'red' }]}>Quitter la session</Text>
                 </View>
             </View>
-        );
-    }
+    );
+
 }
 
 var styles = StyleSheet.create({
@@ -122,4 +136,12 @@ var styles = StyleSheet.create({
 });
 
 
-export default (Menu);
+const mapStateToProps = state => ({
+    isFirstConnection: state.connection.isFirstConnection,
+
+    menuIsOpen: state.menu.menuIsOpen,
+});
+
+
+export default connect(mapStateToProps, null)(Menu);
+

@@ -8,7 +8,8 @@ export const setConnection = createSlice({
     reducers: {
         setIsFirstConnection: (state, action) => {
             state.isFirstConnection = action.payload
-        }
+        },
+
     }
 })
 

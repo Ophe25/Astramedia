@@ -20,78 +20,73 @@ class Comm extends React.Component {
 
     render() {
         return (
-            <>
-                {this.state.isOpen ?
-                    <Menu onPress={() => this.setState({ isOpen: false })} />
-                    :
-                    <View style={{ flex: 1, backgroundColor: '#03030E', padding: 20, paddingBottom: 50 }}>
-                        <Text
+            <View style={{ flex: 1, backgroundColor: '#03030E', padding: 20, paddingBottom: 50 }}>
+                <Text
+                    style={{
+                        textAlign: 'center',
+                        marginBottom: 15,
+                        color: 'white',
+                        fontSize: 20,
+                        paddingTop: 15,
+                        paddingBottom: 15,
+                    }}>
+                    Communication & Strat UX
+                </Text>
+                <ScrollView style={{ flex: 1 }}>
+                    {/* <View style={{ flex: 1 }}> */}
+                    <Text style={{ textAlign: 'justify', marginBottom: 15, color: 'white' }}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Cras a molestie ante, quis porta enim.
+                        Pellentesque ut rutrum massa, ac ornare leo.
+                        Ut ultricies, sapien in pharetra sagittis,
+                        risus nunc imperdiet sapien,
+                        a interdum risus risus sed ligula.
+                        Duis vehicula elit non urna vehicula vehicula.
+                    </Text>
+                    <View>
+                        <Image
+                            source={require('../assets/image/StratUXBefore.png')}
+                            width={50}
+                            height={100}
                             style={{
-                                textAlign: 'center',
-                                marginBottom: 15,
-                                color: 'white',
-                                fontSize: 20,
-                                paddingTop: 15,
-                                paddingBottom: 15,
-                            }}>
-                            Communication & Strat UX
-                        </Text>
-                        <ScrollView style={{ flex: 1 }}>
-                            {/* <View style={{ flex: 1 }}> */}
-                            <Text style={{ textAlign: 'justify', marginBottom: 15, color: 'white' }}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Cras a molestie ante, quis porta enim.
-                                Pellentesque ut rutrum massa, ac ornare leo.
-                                Ut ultricies, sapien in pharetra sagittis,
-                                risus nunc imperdiet sapien,
-                                a interdum risus risus sed ligula.
-                                Duis vehicula elit non urna vehicula vehicula.
-                            </Text>
-                            <View>
-                                <Image
-                                    source={require('../assets/image/StratUXBefore.png')}
-                                    width={50}
-                                    height={100}
-                                    style={{
-                                        aspectRatio: 280 / 570, width: '100%', height: undefined
+                                aspectRatio: 280 / 570, width: '100%', height: undefined
 
-                                    }}
-                                />
-                            </View>
-                            {/* </View> */}
-                            <Text style={{ textAlign: 'justify', marginBottom: 15, color: 'white' }}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Cras a molestie ante, quis porta enim.
-                                Pellentesque ut rutrum massa, ac ornare leo.
-                                Ut ultricies, sapien in pharetra sagittis,
-                                risus nunc imperdiet sapien,
-                                a interdum risus risus sed ligula.
-                                Duis vehicula elit non urna vehicula vehicula.
-                            </Text>
-                            <View>
-                                <Image
-                                    source={require('../assets/image/StratUXAfter.png')}
-                                    width={50}
-                                    height={100}
-                                    style={{
-                                        aspectRatio: 280 / 570, width: '100%', height: undefined
-
-                                    }}
-                                />
-                            </View>
-                            <Text style={{ textAlign: 'justify', marginBottom: 15, color: 'white' }}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Cras a molestie ante, quis porta enim.
-                                Pellentesque ut rutrum massa, ac ornare leo.
-                                Ut ultricies, sapien in pharetra sagittis,
-                                risus nunc imperdiet sapien,
-                                a interdum risus risus sed ligula.
-                                Duis vehicula elit non urna vehicula vehicula.
-                            </Text>
-                        </ScrollView>
+                            }}
+                        />
                     </View>
-                }
-            </>
+                    {/* </View> */}
+                    <Text style={{ textAlign: 'justify', marginBottom: 15, color: 'white' }}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Cras a molestie ante, quis porta enim.
+                        Pellentesque ut rutrum massa, ac ornare leo.
+                        Ut ultricies, sapien in pharetra sagittis,
+                        risus nunc imperdiet sapien,
+                        a interdum risus risus sed ligula.
+                        Duis vehicula elit non urna vehicula vehicula.
+                    </Text>
+                    <View>
+                        <Image
+                            source={require('../assets/image/StratUXAfter.png')}
+                            width={50}
+                            height={100}
+                            style={{
+                                aspectRatio: 280 / 570, width: '100%', height: undefined
+
+                            }}
+                        />
+                    </View>
+                    <Text style={{ textAlign: 'justify', marginBottom: 15, color: 'white' }}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Cras a molestie ante, quis porta enim.
+                        Pellentesque ut rutrum massa, ac ornare leo.
+                        Ut ultricies, sapien in pharetra sagittis,
+                        risus nunc imperdiet sapien,
+                        a interdum risus risus sed ligula.
+                        Duis vehicula elit non urna vehicula vehicula.
+                    </Text>
+                </ScrollView>
+            </View>
+
 
         );
     }

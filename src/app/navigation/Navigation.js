@@ -16,89 +16,107 @@ import Dev from '../screens/Dev';
 
 export default function Navigation(props) {
     return (
-        <NavigationContainer>
+        <NavigationContainer >
             {MainStackScreen(props)}
         </NavigationContainer>
     );
 };
+
 const MainStack = createNativeStackNavigator();
 const MainStackScreen = (props) => (
-    <MainStack.Navigator
-        initialRouteName="LogoSpin"
-        screenOptions={{
-            headerShown: false,
+    <>
+        <MainStack.Navigator
+            initialRouteName="LogoSpin"
+            screenOptions={{
+                headerShown: false,
 
-        }}
-    >
-        <MainStack.Screen
-            name="LogoSpin"
-            component={LogoSpin}
-            options={{
-                header: () => null,
             }}
-        />
-        <MainStack.Screen
-            name="Home"
-            component={Home}
-            options={{
-                header: () => null,
-            }}
-        />
+        >
+            <MainStack.Screen
+                name="LogoSpin"
+                component={LogoSpin}
+                options={{
+                    header: () => null,
+                }}
+            />
+            <MainStack.Screen
+                name="Menu"
+                options={{
+                    header: () => null,
+                }}
+            >
+                {() => MenuStackScreen(props)}
+            </MainStack.Screen>
+        </MainStack.Navigator>
+    </>
+)
 
-        <MainStack.Screen
-            name="Scan"
-            component={Scan}
-            options={{
-                header: () => null,
-            }}
-        />
+const MenuStack = createNativeStackNavigator();
+const MenuStackScreen = (props) => (
+    <>
+        <Menu {...props} ></Menu>
+        <MenuStack.Navigator
+            initialRouteName="Home"
+            screenOptions={{
+                headerShown: false,
 
-        <MainStack.Screen
-            name="Menu"
-            component={Menu}
-            options={{
-                header: () => null,
             }}
-        />
+        >
+            <MenuStack.Screen
+                name="Home"
+                component={Home}
+                options={{
+                    header: () => null,
+                }}
+            />
 
-        <MainStack.Screen
-            name="Step"
-            component={StepStackScreen}
-            options={{
-                header: () => null,
-            }}
-        />
-        <MainStack.Screen
-            name="Dev"
-            component={Dev}
-            options={{
-                header: () => null,
-            }}
-        />
-        <MainStack.Screen
-            name="Comm"
-            component={Comm}
-            options={{
-                header: () => null,
-            }}
-        />
-        <MainStack.Screen
-            name="Crea"
-            component={Crea}
-            options={{
-                header: () => null,
-            }}
-        />
-        <MainStack.Screen
-            name="History"
-            component={History}
-            options={{
-                header: () => null,
-            }}
-        />
+            <MenuStack.Screen
+                name="Scan"
+                component={Scan}
+                options={{
+                    header: () => null,
+                }}
+            />
+
+            <MenuStack.Screen
+                name="Step"
+                component={StepStackScreen}
+                options={{
+                    header: () => null,
+                }}
+            />
+            <MenuStack.Screen
+                name="Dev"
+                component={Dev}
+                options={{
+                    header: () => null,
+                }}
+            />
+            <MenuStack.Screen
+                name="Comm"
+                component={Comm}
+                options={{
+                    header: () => null,
+                }}
+            />
+            <MenuStack.Screen
+                name="Crea"
+                component={Crea}
+                options={{
+                    header: () => null,
+                }}
+            />
+            <MenuStack.Screen
+                name="History"
+                component={History}
+                options={{
+                    header: () => null,
+                }}
+            />
 
 
-    </MainStack.Navigator>
+        </MenuStack.Navigator>
+    </>
 )
 
 const StepStack = createNativeStackNavigator();
@@ -133,51 +151,4 @@ const StepStackScreen = (props) => (
 
     </StepStack.Navigator>
 
-);
-
-const OffLineStack = createNativeStackNavigator();
-const OffLineStackScreen = (props) => (
-    <OffLineStack.Navigator
-        initialRouteName="Menu"
-        screenOptions={{
-            headerShown: false,
-        }}
-    >
-        <OffLineStack.Screen
-            name="Menu"
-            component={Menu}
-            options={{
-                header: () => null,
-            }}
-        />
-        <OffLineStack.Screen
-            name="Dev"
-            component={Dev}
-            options={{
-                header: () => null,
-            }}
-        />
-        <OffLineStack.Screen
-            name="Comm"
-            component={Comm}
-            options={{
-                header: () => null,
-            }}
-        />
-        <OffLineStack.Screen
-            name="Crea"
-            component={Crea}
-            options={{
-                header: () => null,
-            }}
-        />
-        <OffLineStack.Screen
-            name="History"
-            component={History}
-            options={{
-                header: () => null,
-            }}
-        />
-
-    </OffLineStack.Navigator>
 );

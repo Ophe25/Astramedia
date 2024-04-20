@@ -11,10 +11,12 @@ import {
 import { combineReducers } from "redux";
 import setConnection from '../reducers/introductionReducer';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import setMenu from '../reducers/introductionReducer2';
 
 
 const reducers = combineReducers({
     connection: setConnection,
+    menu: setMenu,
 });
 
 

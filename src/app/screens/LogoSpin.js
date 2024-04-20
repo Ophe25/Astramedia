@@ -15,7 +15,7 @@ function LogoSpin(props) {
                 props.navigation.replace("Step")
 
             } else {
-                props.navigation.replace("Home")
+                props.navigation.replace("Menu")
 
             }
         }, 1000);
