@@ -47,6 +47,13 @@ const MainStackScreen = (props) => (
             >
                 {() => MenuStackScreen(props)}
             </MainStack.Screen>
+            <MainStack.Screen
+                name="Step"
+                component={StepStackScreen}
+                options={{
+                    header: () => null,
+                }}
+            />
         </MainStack.Navigator>
     </>
 )

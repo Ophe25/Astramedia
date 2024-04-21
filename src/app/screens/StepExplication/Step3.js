@@ -58,7 +58,7 @@ class Step3 extends React.Component {
                     <Button
                         onPress={() => {
                             store.dispatch(setIsFirstConnection(false))
-                            this.props.navigation.replace("Home")
+                            this.props.navigation.replace("Menu")
                         }
                         }
                     >C'est parti !</Button>

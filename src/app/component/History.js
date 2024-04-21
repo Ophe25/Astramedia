@@ -17,12 +17,11 @@ import {
     ViroQuad,
     ViroScene,
     ViroCamera,
+    ViroImage,
 } from '@viro-community/react-viro';
-import TowerIUT from './CustomComponent/TowerIUT';
-import PosterIllustration from './CustomComponent/PosterIllustration';
 
 
-class History extends React.Component {
+class HelloWorldAR extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -87,19 +86,74 @@ class History extends React.Component {
                     </ViroARScene>
                     :
                     // Scène tour iut RA
-                    <ViroARScene onTrackingUpdated={this._onTrackingUpdated}>
-                        <ViroAmbientLight color={"#aaaaaa"} influenceBitMask={1} />
-                        {/* reconnaissance QR Code */}
-                        {/* <ViroARImageMarker target={"target_filter"} onAnchorFound={() => this.props.visible()}>
-                        </ViroARImageMarker> */}
-                        {/* Objets mis en scène lors de la reconnaissance du QR Code (Tour IUT) */}
-                        <ViroARImageMarker target={"target_tower"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND TOWER")}>
-                            <TowerIUT />
-                        </ViroARImageMarker>
-                        <ViroARImageMarker target={"target_filter"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND POSTER")}>
-                            <PosterIllustration />
-                        </ViroARImageMarker>
-                    </ViroARScene >
+                    <>
+                        <ViroARScene onTrackingUpdated={this._onTrackingUpdated}>
+                            <ViroAmbientLight color={"#aaaaaa"} influenceBitMask={1} />
+                            {/* reconnaissance QR Code */}
+                            <ViroARImageMarker target={"target"} onAnchorFound={() => this.props.visible()}>
+                            </ViroARImageMarker>
+                            {/* Objets mis en scène lors de la reconnaissance du QR Code */}
+                            <ViroARImageMarker target={"targetOne"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND")}>
+                                <ViroNode>
+                                    {/* 1ere lumière */}
+                                    <ViroSpotLight
+                                        innerAngle={5}
+                                        outerAngle={90}
+                                        direction={[0, -1, -.2]}
+                                        position={[0, 3, 1]}
+                                        color="#fff"
+                                        castsShadow={true}
+                                    />
+
+                                    {/* 2e lumière */}
+                                    <ViroSpotLight
+                                        innerAngle={5}
+                                        outerAngle={45}
+                                        direction={[0, -1, -.2]}
+                                        position={[0, 3, 0]}
+                                        color="#fff"
+                                        castsShadow={true}
+                                        influenceBitMask={2}
+                                        shadowMapSize={2048}
+                                        shadowNearZ={2}
+                                        shadowFarZ={5}
+                                        shadowOpacity={.7}
+                                    />
+                                    {/* Objet 3D */}
+                                    <Viro3DObject
+                                        source={require('../assets/image/TowerIUT.obj')}
+                                        width={150}
+                                        position={[0, -15, 0]}
+                                        scale={[0.8, 0.8, 0.8]}
+                                        type="OBJ"
+                                        resources={[
+                                            require('../assets/image/TowerIUT.mtl'),
+                                        ]}
+                                        onClick={() => this.props.setDescriptionVisible()}
+                                        //transformBehaviors={'billboard'}
+                                        rotation={[-90, 0, 40]}
+                                    />
+
+                                </ViroNode>
+
+
+                            </ViroARImageMarker>
+                            <ViroARImageMarker target={"targetTwo"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND POSTER")}>
+                                <ViroNode>
+                                    <ViroImage
+                                        height={2}
+                                        width={2}
+                                        rotation={[-95, 0, 0]}
+                                        position={[0, -4, 0]}
+                                        onClick={this.props.onPressIllustration}
+                                        // placeholderSource={require("./res/local_spinner.jpg")}
+                                        source={require("../assets/image/PosterIllustration.png")}
+                                    />
+                                </ViroNode>
+                            </ViroARImageMarker>
+                        </ViroARScene >
+
+                    </>
                 }
             </>
 
@@ -111,25 +165,17 @@ class History extends React.Component {
 //Initialisation des cibles
 
 ViroARTrackingTargets.createTargets({
-    target_poster: {
-        source: require('../assets/image/QrCode/history_poster.png'),
-        orientation: "Up",
-        physicalWidth: 0.15, // real world width in meters  
-    },
-
-    target_tower: {
+    targetOne: {
         source: require('../assets/image/QrCode/history_tower.png'),
         orientation: "Up",
         physicalWidth: 0.15, // real world width in meters  
     },
-
-    target_newspaper: {
-        source: require('../assets/image/QrCode/history_newspaper.png'),
+    targetTwo: {
+        source: require('../assets/image/QrCode/dev.png'),
         orientation: "Up",
         physicalWidth: 0.15, // real world width in meters  
     },
-
-    target_filter: {
+    target: {
         source: require('../assets/image/QrCode/Kakemono.png'),
         orientation: "Up",
         physicalWidth: 0.15, // real world width in meters  
@@ -146,4 +192,4 @@ var styles = StyleSheet.create({
     },
 });
 
-export default (History);
+export default (HelloWorldAR);

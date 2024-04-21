@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, ScrollView } from 'react-native';
 import { Text } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../component/CustomComponent/CustomButton';
@@ -21,39 +21,71 @@ class History extends React.Component {
     render() {
         return (
 
-            <View style={{ flex: 1, backgroundColor: '#03030E', padding: 20, paddingBottom: 50 }}>
-                <Image
-                    source={require('../assets/image/GlowHome.png')}
-                    style={{ position: 'absolute', bottom: 0 }}
-                />
-                <View style={{ flex: 4, justifyContent: 'flex-end' }}>
-                    <Text style={{ textAlign: 'center', marginBottom: 15, color: 'white' }}>Choisissez un parcours :</Text>
-
-                    <CustomButton
-                        title={'Parcours Formation'}
-                        style={{ padding: 20 }}
-                        onPress={() => {
-                            this.props.navigation.navigate("Scan")
-                        }}
-
-                    />
-                    <Text style={{ textAlign: 'center', marginBottom: 30, marginTop: 10, paddingHorizontal: 20, color: 'white' }}>
-                        Vous aimeriez en savoir plus sur la formation Métiers du Multimédia et de l’Internet
+            <View style={{ flex: 1, backgroundColor: '#03030E', paddingBottom: 50 }}>
+                <Text
+                    style={{
+                        textAlign: 'center',
+                        marginBottom: 15,
+                        color: 'white',
+                        fontSize: 20,
+                        paddingTop: 15,
+                        paddingBottom: 15,
+                    }}>
+                    Communication & Strat UX
+                </Text>
+                <ScrollView style={{ flex: 1, padding: 20 }}>
+                    {/* <View style={{ flex: 1 }}> */}
+                    <Text style={{ textAlign: 'justify', marginBottom: 15, color: 'white' }}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Cras a molestie ante, quis porta enim.
+                        Pellentesque ut rutrum massa, ac ornare leo.
+                        Ut ultricies, sapien in pharetra sagittis,
+                        risus nunc imperdiet sapien,
+                        a interdum risus risus sed ligula.
+                        Duis vehicula elit non urna vehicula vehicula.
                     </Text>
-                    <CustomButton
-                        title={'Parcours Historique'}
-                        style={{ padding: 20 }}
-                        onPress={() => {
-                            this.props.navigation.navigate("Scan", { parcours: "historique" })
-                        }}
+                    <View>
+                        <Image
+                            source={require('../assets/image/StratUXBefore.png')}
+                            width={50}
+                            height={100}
+                            style={{
+                                aspectRatio: 280 / 570, width: '100%', height: undefined
 
-                    />
-                    <Text style={{ textAlign: 'center', marginBottom: 45, marginTop: 10, paddingHorizontal: 20, color: 'white' }}>
-                        Vous aimeriez découvrir le lieu et l’histoire de votre futur établissement
+                            }}
+                        />
+                    </View>
+                    {/* </View> */}
+                    <Text style={{ textAlign: 'justify', marginBottom: 15, color: 'white' }}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Cras a molestie ante, quis porta enim.
+                        Pellentesque ut rutrum massa, ac ornare leo.
+                        Ut ultricies, sapien in pharetra sagittis,
+                        risus nunc imperdiet sapien,
+                        a interdum risus risus sed ligula.
+                        Duis vehicula elit non urna vehicula vehicula.
                     </Text>
+                    <View>
+                        <Image
+                            source={require('../assets/image/StratUXAfter.png')}
+                            width={50}
+                            height={100}
+                            style={{
+                                aspectRatio: 280 / 570, width: '100%', height: undefined
 
-                </View>
-
+                            }}
+                        />
+                    </View>
+                    <Text style={{ textAlign: 'justify', marginBottom: 15, color: 'white' }}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Cras a molestie ante, quis porta enim.
+                        Pellentesque ut rutrum massa, ac ornare leo.
+                        Ut ultricies, sapien in pharetra sagittis,
+                        risus nunc imperdiet sapien,
+                        a interdum risus risus sed ligula.
+                        Duis vehicula elit non urna vehicula vehicula.
+                    </Text>
+                </ScrollView>
             </View>
 
 

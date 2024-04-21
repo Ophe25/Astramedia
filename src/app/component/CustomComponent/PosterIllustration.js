@@ -12,7 +12,7 @@ class PosterIllustration extends React.Component {
 
     render() {
         return (
-            <ViroNode>
+            <ViroNode scale={[0, 0, 0]}>
                 <ViroImage
                     position={[0, 0, -2]}
                     // placeholderSource={require("./res/local_spinner.jpg")}

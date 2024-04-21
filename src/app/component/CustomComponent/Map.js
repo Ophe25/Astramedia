@@ -8,14 +8,9 @@ class Map extends React.Component {
     render() {
         return (
             <TouchableOpacity
-                style={{ flex: 1 }}
+                style={{ flex: 1, padding: 15 }}
                 onPress={this.props.onPress}
             >
-                <Text style={[styles.Text]}>Les Qr Codes sont répartis dans 3 salles différentes, la 207, la 212 et la 205.
-                    Chaque salle corresponds à un parcours, Développement web et Dispositifs Intéractifs, Stratégie de Communication Numérique et Design
-                    d'Expérience et Création Numérique.
-                    À vous de les retrouver afin d'apprendre à mieux connaître l'IUT et la formation MMI.</Text>
-
                 <View style={{ flex: 9 }}>
                     <Image
                         source={require('../../assets/image/Map.png')}
@@ -23,6 +18,9 @@ class Map extends React.Component {
                             aspectRatio: 85 / 150, width: undefined, height: '100%', alignSelf: 'center'
                         }} />
                 </View>
+                <Text style={[styles.Text]}>Les Qr Codes sont répartis dans 3 salles différentes, la 207, la 212 et la 205.
+                    À vous de les retrouver afin d'apprendre à mieux connaître l'IUT et la formation MMI.</Text>
+
             </TouchableOpacity>
         );
     }
@@ -35,9 +33,7 @@ var styles = StyleSheet.create({
         fontSize: 15,
         color: '#fff',
         textAlignVertical: 'bottom',
-        textAlign: 'center',
-        paddingBottom: 15,
-        paddingHorizontal: '10%'
+        textAlign: 'justify',
     },
 });
 

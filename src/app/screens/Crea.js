@@ -19,8 +19,8 @@ class Crea extends React.Component {
     render() {
         return (
 
-            <View style={{ flex: 1, backgroundColor: '#03030E', padding: 20, paddingBottom: 50 }}>
-                <View style={{ flexDirection: 'row', paddingTop: 15, }}>
+            <View style={{ flex: 1, backgroundColor: '#03030E', paddingBottom: 50 }}>
+                <View style={{ flexDirection: 'row', paddingTop: 15, alignSelf: 'center' }}>
                     <Text
                         style={{
                             textAlign: 'center',
@@ -33,7 +33,7 @@ class Crea extends React.Component {
                         Création Numérique
                     </Text>
                 </View>
-                <ScrollView style={{ flex: 1 }}>
+                <ScrollView style={{ flex: 1, padding: 20, }}>
                     {/* <View style={{ flex: 1 }}> */}
                     <Text style={{ textAlign: 'justify', marginBottom: 15, color: 'white' }}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -46,11 +46,11 @@ class Crea extends React.Component {
                     </Text>
                     <View>
                         <Image
-                            source={require('../assets/image/StratUXBefore.png')}
+                            source={require('../assets/image/Crea1.png')}
                             width={50}
                             height={100}
                             style={{
-                                aspectRatio: 280 / 570, width: '100%', height: undefined
+                                aspectRatio: 700 / 980, width: '100%', height: undefined
 
                             }}
                         />
@@ -65,13 +65,14 @@ class Crea extends React.Component {
                         a interdum risus risus sed ligula.
                         Duis vehicula elit non urna vehicula vehicula.
                     </Text>
+
                     <View>
                         <Image
-                            source={require('../assets/image/StratUXAfter.png')}
+                            source={require('../assets/image/Crea.png')}
                             width={50}
                             height={100}
                             style={{
-                                aspectRatio: 280 / 570, width: '100%', height: undefined
+                                aspectRatio: 550 / 900, width: '100%', height: undefined
 
                             }}
                         />

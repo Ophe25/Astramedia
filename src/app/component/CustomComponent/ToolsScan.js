@@ -27,33 +27,7 @@ class ToolsScan extends React.Component {
                         size={22}
                         color="white"
                         onPress={this.props.onPressMap}
-                        style={{ paddingVertical: 10 }}
-
-                    />
-                </View>
-
-                <Icon2
-                    name="sound-mix"
-                    size={22}
-                    color="white"
-                    onPress={this.props.onPressFilter}
-                    style={{ paddingVertical: 10 }}
-                />
-                <View
-                    style={{
-                        // flex: 1,
-                        // alignItems: 'flex-end',
-                        backgroundColor: "rgba(0,0,0, 0.30)",
-                        padding: 5,
-                        borderRadius: 30,
-                        marginTop: 5,
-                    }}
-                >
-                    <Icon2
-                        name="plus"
-                        size={22}
-                        color="white"
-                        onPress={this.props.onPressMore}
+                        style={{ paddingVertical: 5, paddingHorizontal: 5 }}
                     />
                 </View>
             </>
