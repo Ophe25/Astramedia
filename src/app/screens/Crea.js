@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Image, ScrollView, StyleSheet } from 'react-native';
+import { View, Image, ScrollView, StyleSheet, BackHandler } from 'react-native';
 import { Text } from 'react-native-paper';
 import Menu from '../component/CustomComponent/Menu';
 import ButtonMenu from '../component/CustomComponent/ButtonMenu';
+import CustomButton from '../component/CustomComponent/CustomButton';
 // import Menu from '../Menu/Menu';
 
 
@@ -13,6 +14,13 @@ class Crea extends React.Component {
         this.state = {
             isOpen: false,
         }
+    }
+
+    componentDidMount() {
+        BackHandler.addEventListener(
+            'hardwareBackPress',
+            () => { return true },
+        );
     }
 
 
@@ -82,7 +90,7 @@ class Crea extends React.Component {
                     <Text style={styles.Text}>
                         Quelques métiers liés :
                     </Text>
-                    <View style={{ paddingLeft: 15, paddingBottom: 20 }}>
+                    <View style={{ paddingLeft: 15 }}>
                         <Text style={styles.Text}>
                             - Directeur artistique
                         </Text>
@@ -96,6 +104,11 @@ class Crea extends React.Component {
                             - Réalisateur
                         </Text>
                     </View>
+                    <CustomButton
+                        title={'Scanner un autre QR Code'}
+                        style={{ marginVertical: 20 }}
+                        onPress={() => this.props.navigation.replace("Scan", { parcours: "formation" })}
+                    />
                 </ScrollView>
             </View>
 

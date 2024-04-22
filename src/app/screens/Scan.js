@@ -5,7 +5,6 @@ import {
     ViroARSceneNavigator,
 } from '@viro-community/react-viro';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Icon2 from 'react-native-vector-icons/Entypo';
 import { Text } from 'react-native-paper';
 import History from '../component/History';
 import Menu from '../component/CustomComponent/Menu';
@@ -46,7 +45,7 @@ class Scan extends React.Component {
     }
 
     render() {
-        console.log('parcours', this.props.parcours)
+        console.log('parcours', this.props.route.params.parcours)
         return (
             <>
                 {
@@ -55,84 +54,46 @@ class Scan extends React.Component {
                         :
 
                         <>
-                            <View>
-                                <View
-                                    style={{
-                                        // flex: 1,
-                                        // alignItems: 'flex-end',
-                                        position: 'absolute',
-                                        top: 10,
-                                        left: 10,
-                                        zIndex: 1,
-                                        backgroundColor: "rgba(255,255,255, 0.30)",
-                                        padding: 5,
-                                        borderRadius: 30
-                                    }}
-                                >
-                                    <Icon
-                                        name="menu"
-                                        size={25}
-                                        color="white"
-                                        onPress={() => this.setState({ menuIsOpen: true })}
-                                    />
+                            <View
+                                style={{
+                                    // flex: 1,
+                                    position: 'absolute',
+                                    width: '100%',
+                                    top: 0,
+                                    right: 0,
+                                    zIndex: 2,
+                                    backgroundColor: this.state.visible ? "rgba(0,0,0, 0.10)" : "rgba(0,0,0, 0.50)",
+                                    paddingVertical: 18,
+                                    flexDirection: 'row',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    paddingLeft: 70,
+                                }}
+                            >
+                                <View style={{
+                                    backgroundColor: this.state.visible ? "rgba(255,255,255, 0.20)" : "rgba(255,255,255, 0)",
+                                    borderRadius: 99,
+                                    padding: 25,
+                                    position: 'absolute',
+                                    top: 0,
+                                    right: -3.5
+                                }}>
                                 </View>
-                                <View
+                                <Text style={[styles.helloWorldTextStyle, {
+                                    justifyContent: 'center',
+                                    paddingBottom: 0,
+                                    fontSize: 18
+                                }]}>Parcours {this.props.route.params.parcours === 'formation' ? 'formation' : 'patrimoine'}</Text>
+
+                                <Icon
+                                    name="map-outline"
+                                    size={22}
+                                    color="white"
+                                    onPress={() => this.setState({ carteIsOpen: true })}
                                     style={{
-                                        // flex: 1,
-                                        // alignItems: 'flex-end',
-                                        position: 'absolute',
-                                        top: 10,
-                                        right: 10,
-                                        zIndex: 2,
-                                        backgroundColor: this.state.visible ? "rgba(255, 255, 255, 0.10)" : "rgba(255,255,255, 0.30)",
-                                        padding: 5,
-                                        borderRadius: 30,
-                                        alignItems: 'center'
+                                        paddingRight: 10,
                                     }}
-                                >
-                                    <View style={{
-                                        backgroundColor: this.state.visible ? "rgba(255,255,255, 0.20)" : "rgba(255,255,255, 0)",
-                                        borderRadius: 99,
-                                        padding: 25,
-                                        position: 'absolute',
-                                        top: 0,
-                                        right: -3.5
-                                    }}>
-                                    </View>
-                                    <Icon
-                                        name="map-outline"
-                                        size={22}
-                                        color="white"
-                                        onPress={() => this.setState({ carteIsOpen: true })}
-                                        style={{ paddingVertical: 10 }}
-
-                                    />
-
-                                    <Icon2
-                                        name="sound-mix"
-                                        size={22}
-                                        color="white"
-                                        onPress={() => this.setState({ isOpen: true })}
-                                        style={{ paddingVertical: 10 }}
-                                    />
-                                    <View
-                                        style={{
-                                            // flex: 1,
-                                            // alignItems: 'flex-end',
-                                            backgroundColor: "rgba(0,0,0, 0.30)",
-                                            padding: 5,
-                                            borderRadius: 30,
-                                            marginTop: 5,
-                                        }}
-                                    >
-                                        <Icon2
-                                            name="plus"
-                                            size={22}
-                                            color="white"
-                                            onPress={() => this.setState({ isOpen: true })}
-                                        />
-                                    </View>
-                                </View>
+                                />
                             </View>
 
                             {this.state.visible || this.state.carteIsOpen ?
@@ -185,14 +146,16 @@ class Scan extends React.Component {
                                 <Text style={[styles.helloWorldTextStyle, { paddingTop: 20 }]}>Le Bobigny Matsuri</Text>
                                 <Text style={styles.helloWorldTextStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a molestie ante, quis porta enim. Pellentesque ut rutrum massa, ac ornare leo. Ut ultricies, sapien in pharetra sagittis, risus nunc imperdiet sapien, a interdum risus risus sed ligula. Duis vehicula elit non urna vehicula vehicula.</Text>
                             </SwipeablePanel> */}
-                            {this.props.parcours === 'historique' ? <ViroARSceneNavigator
+                            {this.props.route.params.parcours === 'historique' ? <ViroARSceneNavigator
                                 autofocus={true}
                                 initialScene={{
                                     scene: () => <History
                                         navigation={this.props.navigation}
                                         visible={this._setVisible}
                                         setDescriptionVisible={this._setDescriptionVisible}
-                                        onPressIllustration={() => this.props.navigation.navigate("DescriptionNewspaperIUT")}
+                                        onPressIllustration={() => this.props.navigation.replace("Newspaper", { Scan: true })}
+                                        onPressTower={() => this.props.navigation.replace("Tower", { Scan: true })}
+                                        onPressPoster={() => this.props.navigation.replace("Illustration", { Scan: true })}
                                     />
                                 }}
                                 style={styles.f1}
@@ -205,7 +168,9 @@ class Scan extends React.Component {
                                             navigation={this.props.navigation}
                                             visible={this._setVisible}
                                             setDescriptionVisible={this._setDescriptionVisible}
-                                            onPressIllustration={() => this.props.navigation.navigate("DescriptionNewspaperIUT")}
+                                            onPressDev={() => this.props.navigation.replace("Dev")}
+                                            onPressCrea={() => this.props.navigation.replace("Crea")}
+                                            onPressComm={() => this.props.navigation.replace("Comm")}
                                         />
                                     }}
                                     style={styles.f1}
@@ -221,7 +186,7 @@ class Scan extends React.Component {
 var styles = StyleSheet.create({
     f1: { flex: 1 },
     helloWorldTextStyle: {
-        fontFamily: 'Arial',
+        fontFamily: 'DarkerGrotesque-Medium',
         fontSize: 15,
         color: '#fff',
         textAlignVertical: 'center',

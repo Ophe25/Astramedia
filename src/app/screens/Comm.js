@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, ScrollView, StyleSheet } from 'react-native';
+import { View, Image, ScrollView, StyleSheet, BackHandler } from 'react-native';
 import { Text } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../component/CustomComponent/CustomButton';
@@ -15,6 +15,13 @@ class Comm extends React.Component {
         this.state = {
             isOpen: false,
         }
+    }
+
+    componentDidMount() {
+        BackHandler.addEventListener(
+            'hardwareBackPress',
+            () => { return true },
+        );
     }
 
 
@@ -83,6 +90,11 @@ class Comm extends React.Component {
                             - Community manager
                         </Text>
                     </View>
+                    <CustomButton
+                        title={'Scanner un autre QR Code'}
+                        style={{ marginVertical: 20 }}
+                        onPress={() => this.props.navigation.replace("Scan", { parcours: "formation" })}
+                    />
                 </ScrollView>
             </View>
 

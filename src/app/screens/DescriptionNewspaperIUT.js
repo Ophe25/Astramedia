@@ -1,9 +1,18 @@
 import React from 'react';
-import { View, Image, ScrollView, StyleSheet } from 'react-native';
+import { View, Image, ScrollView, StyleSheet, BackHandler } from 'react-native';
 import { Text } from 'react-native-paper';
+import CustomButton from '../component/CustomComponent/CustomButton';
 
 
 class DescriptionNewspaperIUT extends React.Component {
+
+    componentDidMount() {
+        BackHandler.addEventListener(
+            'hardwareBackPress',
+            () => { return true },
+        );
+    }
+
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: '#03030E', paddingBottom: 20 }}>
@@ -31,7 +40,7 @@ class DescriptionNewspaperIUT extends React.Component {
                     <View>
                         <Image
                             style={styles.Image}
-                            source={require('../assets/image/PosterIllustration.png')}
+                            source={require('../assets/image/NewspaperIllustration.png')}
                         />
                     </View>
                     <Text style={styles.Text}>
@@ -64,13 +73,18 @@ class DescriptionNewspaperIUT extends React.Component {
                         sa version numérique offre une précieuse source d'informations pour
                         les chercheurs et les passionnés d'histoire.
                     </Text>
-                    <Text style={[styles.Text, { paddingVertical: 15 }]}>
+                    <Text style={styles.Text}>
                         Aujourd'hui, ce journal vit une nouvelle ère numérique,
                         accessible dans son intégralité depuis mars 2013 sur Internet.
                         vec 5293 numéros et environ 180 000 pages,
                         sa version numérique offre une précieuse source d'informations pour
                         les chercheurs et les passionnés d'histoire.
                     </Text>
+                    <CustomButton
+                        title={'Scanner un autre QR Code'}
+                        style={{ marginVertical: 20 }}
+                        onPress={() => this.props.navigation.replace("Scan", { parcours: "historique" })}
+                    />
                 </ScrollView>
 
             </View>

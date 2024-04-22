@@ -93,7 +93,7 @@ class History extends React.Component {
                             <ViroARImageMarker target={"target"} onAnchorFound={() => this.props.visible()}>
                             </ViroARImageMarker>
                             {/* Objets mis en scène lors de la reconnaissance du QR Code */}
-                            <ViroARImageMarker target={"targetOne"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND")}>
+                            <ViroARImageMarker target={"targetTower"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND")}>
                                 <ViroNode>
                                     {/* 1ere lumière */}
                                     <ViroSpotLight
@@ -129,16 +129,29 @@ class History extends React.Component {
                                         resources={[
                                             require('../assets/image/TowerIUT.mtl'),
                                         ]}
-                                        onClick={() => this.props.setDescriptionVisible()}
+                                        onClick={this.props.onPressTower}
                                         //transformBehaviors={'billboard'}
                                         rotation={[-90, 0, 40]}
                                     />
 
                                 </ViroNode>
-
-
                             </ViroARImageMarker>
-                            <ViroARImageMarker target={"targetTwo"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND POSTER")}>
+
+                            <ViroARImageMarker target={"targetPoster"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND POSTER")}>
+                                <ViroNode>
+                                    <ViroImage
+                                        height={2}
+                                        width={2}
+                                        rotation={[-95, 0, 0]}
+                                        position={[0, -4, 0]}
+                                        onClick={this.props.onPressPoster}
+                                        // placeholderSource={require("./res/local_spinner.jpg")}
+                                        source={require("../assets/image/IUTBefore.png")}
+                                    />
+                                </ViroNode>
+                            </ViroARImageMarker>
+
+                            <ViroARImageMarker target={"targetNewspaper"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND Newspaper")}>
                                 <ViroNode>
                                     <ViroImage
                                         height={2}
@@ -147,7 +160,7 @@ class History extends React.Component {
                                         position={[0, -4, 0]}
                                         onClick={this.props.onPressIllustration}
                                         // placeholderSource={require("./res/local_spinner.jpg")}
-                                        source={require("../assets/image/PosterIllustration.png")}
+                                        source={require("../assets/image/NewspaperIllustration.png")}
                                     />
                                 </ViroNode>
                             </ViroARImageMarker>
@@ -165,13 +178,18 @@ class History extends React.Component {
 //Initialisation des cibles
 
 ViroARTrackingTargets.createTargets({
-    targetOne: {
+    targetTower: {
         source: require('../assets/image/QrCode/history_tower.png'),
         orientation: "Up",
         physicalWidth: 0.15, // real world width in meters  
     },
-    targetTwo: {
+    targetPoster: {
         source: require('../assets/image/QrCode/history_poster.png'),
+        orientation: "Up",
+        physicalWidth: 0.15, // real world width in meters  
+    },
+    targetNewspaper: {
+        source: require('../assets/image/QrCode/history_newspaper.png'),
         orientation: "Up",
         physicalWidth: 0.15, // real world width in meters  
     },

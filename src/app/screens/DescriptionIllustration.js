@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Image, ScrollView, StyleSheet } from 'react-native';
+import { View, Image, ScrollView, StyleSheet, BackHandler } from 'react-native';
 import { Text } from 'react-native-paper';
+import CustomButton from '../component/CustomComponent/CustomButton';
 
 
 class DescriptionIllustration extends React.Component {
@@ -11,6 +12,12 @@ class DescriptionIllustration extends React.Component {
         }
     }
 
+    componentDidMount() {
+        BackHandler.addEventListener(
+            'hardwareBackPress',
+            () => { return true },
+        );
+    }
 
     render() {
         return (
@@ -57,12 +64,17 @@ class DescriptionIllustration extends React.Component {
                             style={styles.Image}
                         />
                     </View>
-                    <Text style={[styles.Text, { paddingBottom: 20 }]}>
+                    <Text style={styles.Text}>
                         L’histoire du bâtiment est encore présente actuellement.
                         En effet, certaines fondations ont été conservées en l’état
                         et des objets sont exposés dans un hall permettant de garder
                         une trace de ce lieu historique ancré dans l’histoire de l’université.
                     </Text>
+                    <CustomButton
+                        title={'Scanner un autre QR Code'}
+                        style={{ marginVertical: 20 }}
+                        onPress={() => this.props.navigation.replace("Scan", { parcours: "historique" })}
+                    />
                 </ScrollView>
             </View >
 

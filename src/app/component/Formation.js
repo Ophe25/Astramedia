@@ -93,40 +93,40 @@ class Formation extends React.Component {
                             <ViroARImageMarker target={"target"} onAnchorFound={() => this.props.visible()}>
                             </ViroARImageMarker>
                             {/* Objets mis en scène lors de la reconnaissance du QR Code */}
-                            <ViroARImageMarker target={"targetOne"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND")}>
+                            <ViroARImageMarker target={"targetDev"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND")}>
                                 <ViroNode>
                                     <ViroImage
                                         height={2}
                                         width={2}
                                         rotation={[-95, 0, 0]}
                                         position={[0, -4, 0]}
-                                        onClick={this.props.onPressIllustration}
+                                        onClick={this.props.onPressDev}
                                         // placeholderSource={require("./res/local_spinner.jpg")}
                                         source={require("../assets/image/Commat.png")}
                                     />
                                 </ViroNode>
                             </ViroARImageMarker>
-                            <ViroARImageMarker target={"targetTwo"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND POSTER")}>
+                            <ViroARImageMarker target={"targetCrea"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND POSTER")}>
                                 <ViroNode>
                                     <ViroImage
                                         height={2}
                                         width={2}
                                         rotation={[-95, 0, 0]}
                                         position={[0, -4, 0]}
-                                        onClick={this.props.onPressIllustration}
+                                        onClick={this.props.onPressCrea}
                                         // placeholderSource={require("./res/local_spinner.jpg")}
                                         source={require("../assets/image/Crea.png")}
                                     />
                                 </ViroNode>
                             </ViroARImageMarker>
-                            <ViroARImageMarker target={"targetTree"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND POSTER")}>
+                            <ViroARImageMarker target={"targetComm"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND POSTER")}>
                                 <ViroNode>
                                     <ViroImage
                                         height={2}
                                         width={2}
                                         rotation={[-95, 0, 0]}
                                         position={[0, -4, 0]}
-                                        onClick={this.props.onPressIllustration}
+                                        onClick={this.props.onPressComm}
                                         // placeholderSource={require("./res/local_spinner.jpg")}
                                         source={require("../assets/image/StratUXAfter.png")}
                                     />
@@ -146,18 +146,18 @@ class Formation extends React.Component {
 //Initialisation des cibles
 
 ViroARTrackingTargets.createTargets({
-    targetOne: {
+    targetDev: {
         source: require('../assets/image/QrCode/dev.png'),
         orientation: "Up",
         physicalWidth: 0.15, // real world width in meters  
     },
-    targetTwo: {
+    targetCrea: {
         source: require('../assets/image/QrCode/crea.png'),
         orientation: "Up",
         physicalWidth: 0.15, // real world width in meters  
     },
-    targetTree: {
-        source: require('../assets/image/QrCode/comm.png'),
+    targetComm: {
+        source: require('../assets/image/QrCode/history_newspaper.png'),
         orientation: "Up",
         physicalWidth: 0.15, // real world width in meters  
     },

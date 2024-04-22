@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, ScrollView, StyleSheet } from 'react-native';
+import { View, Image, ScrollView, StyleSheet, BackHandler } from 'react-native';
 import { Text } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../component/CustomComponent/CustomButton';
@@ -15,6 +15,13 @@ class DescriptionTowerIUT extends React.Component {
         this.state = {
             isOpen: false,
         }
+    }
+
+    componentDidMount() {
+        BackHandler.addEventListener(
+            'hardwareBackPress',
+            () => { return true },
+        );
     }
 
 
@@ -54,7 +61,7 @@ class DescriptionTowerIUT extends React.Component {
                         on stockait l'eau nécessaire à une technique d'impression en pointe à l'époque,
                         l'héliogravure.
                     </Text>
-                    <Text style={[styles.Text, { paddingVertical: 15 }]}>
+                    <Text style={styles.Text}>
                         Aujourd'hui, après une réhabilitation soignée,
                         la Tour de l'Ancienne Imprimerie est transformée en logements.
                         Entrant en service à la rentrée universitaire 2009,
@@ -63,6 +70,11 @@ class DescriptionTowerIUT extends React.Component {
                         En tant que repère évocateur de l'histoire de l'imprimerie et de Bobigny,
                         cette tour demeure un témoignage vivant du passé industriel et culturel de la région.
                     </Text>
+                    <CustomButton
+                        title={'Scanner un autre QR Code'}
+                        style={{ marginVertical: 20 }}
+                        onPress={() => this.props.navigation.replace("Scan", { parcours: "historique" })}
+                    />
                 </ScrollView>
             </View>
 
