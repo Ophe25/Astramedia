@@ -13,6 +13,9 @@ import History from '../screens/DescriptionHistory';
 import Crea from '../screens/Crea';
 import Comm from '../screens/Comm';
 import Dev from '../screens/Dev';
+import DescriptionTowerIUT from '../screens/DescriptionTowerIUT';
+import DescriptionIllustration from '../screens/DescriptionIllustration';
+import DescriptionNewspaperIUT from '../screens/DescriptionNewspaperIUT';
 
 export default function Navigation(props) {
     return (
@@ -114,8 +117,22 @@ const MenuStackScreen = (props) => (
                 }}
             />
             <MenuStack.Screen
-                name="History"
-                component={History}
+                name="Newspaper"
+                component={DescriptionNewspaperIUT}
+                options={{
+                    header: () => null,
+                }}
+            />
+            <MenuStack.Screen
+                name="Tower"
+                component={DescriptionTowerIUT}
+                options={{
+                    header: () => null,
+                }}
+            />
+            <MenuStack.Screen
+                name="Illustration"
+                component={DescriptionIllustration}
                 options={{
                     header: () => null,
                 }}

@@ -21,6 +21,14 @@ class Comm extends React.Component {
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: '#03030E', paddingBottom: 20 }}>
+                <Image
+                    source={require('../assets/image/GlowStep3.png')}
+                    style={{ position: 'absolute', right: 0 }}
+                />
+                <Image
+                    source={require('../assets/image/GlowDescription3.png')}
+                    style={{ position: 'absolute', bottom: 0 }}
+                />
                 <Text style={styles.Titre}>
                     Communication & Strat UX
                 </Text>
@@ -61,7 +69,7 @@ class Comm extends React.Component {
                     <Text style={styles.Text}>
                         Quelques métiers liés :
                     </Text>
-                    <View style={{ paddingLeft: 15 }}>
+                    <View style={{ paddingLeft: 15, paddingBottom: 15 }}>
                         <Text style={styles.Text}>
                             - Chargé de communication numérique
                         </Text>

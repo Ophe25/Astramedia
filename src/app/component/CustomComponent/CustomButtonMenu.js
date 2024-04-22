@@ -11,22 +11,22 @@ class CustomButtonMenu extends React.Component {
             <View
                 style={this.props.ViewStyle ? this.props.ViewStyle : {}}>
                 <Button
-                    textColor='#FFF'
-                    labelStyle={{
-                        color: 'white',
-                        textAlign: 'center',
-                    }}
                     contentStyle={[{
                         backgroundColor: 'rgba(255,255,255,0.1)',
-                        width: 130,
-                        height: 130,
-                        borderRadius: 5,
+                        borderRadius: 12,
                         justifyContent: 'center',
-                        paddingHorizontal: 10
+                        padding: 15,
+                        margin: 10,
                     }, this.props.style ? this.props.style : {}]}
                     onPress={this.props.onPress}
                 >
-                    {this.props.title}
+                    <Text
+                        style={{
+                            color: 'white',
+                            textAlign: 'center',
+                        }}>
+                        {this.props.title}
+                    </Text>
                 </Button>
             </View>
         );

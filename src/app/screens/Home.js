@@ -47,7 +47,7 @@ class Home extends React.Component {
                         title={'Parcours Formation'}
                         style={{ padding: 20 }}
                         onPress={() => {
-                            this.props.navigation.navigate("Scan")
+                            this.props.navigation.navigate("Scan", { parcours: "formation" })
                         }}
 
                     />
@@ -55,7 +55,7 @@ class Home extends React.Component {
                         Vous aimeriez en savoir plus sur la formation Métiers du Multimédia et de l’Internet
                     </Text>
                     <CustomButton
-                        title={'Parcours Historique'}
+                        title={'Parcours Patrimoine'}
                         style={{ padding: 20 }}
                         onPress={() => {
                             this.props.navigation.navigate("Scan", { parcours: "historique" })

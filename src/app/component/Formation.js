@@ -21,7 +21,7 @@ import {
 } from '@viro-community/react-viro';
 
 
-class History extends React.Component {
+class Formation extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -95,48 +95,16 @@ class History extends React.Component {
                             {/* Objets mis en scène lors de la reconnaissance du QR Code */}
                             <ViroARImageMarker target={"targetOne"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND")}>
                                 <ViroNode>
-                                    {/* 1ere lumière */}
-                                    <ViroSpotLight
-                                        innerAngle={5}
-                                        outerAngle={90}
-                                        direction={[0, -1, -.2]}
-                                        position={[0, 3, 1]}
-                                        color="#fff"
-                                        castsShadow={true}
+                                    <ViroImage
+                                        height={2}
+                                        width={2}
+                                        rotation={[-95, 0, 0]}
+                                        position={[0, -4, 0]}
+                                        onClick={this.props.onPressIllustration}
+                                        // placeholderSource={require("./res/local_spinner.jpg")}
+                                        source={require("../assets/image/Commat.png")}
                                     />
-
-                                    {/* 2e lumière */}
-                                    <ViroSpotLight
-                                        innerAngle={5}
-                                        outerAngle={45}
-                                        direction={[0, -1, -.2]}
-                                        position={[0, 3, 0]}
-                                        color="#fff"
-                                        castsShadow={true}
-                                        influenceBitMask={2}
-                                        shadowMapSize={2048}
-                                        shadowNearZ={2}
-                                        shadowFarZ={5}
-                                        shadowOpacity={.7}
-                                    />
-                                    {/* Objet 3D */}
-                                    <Viro3DObject
-                                        source={require('../assets/image/TowerIUT.obj')}
-                                        width={150}
-                                        position={[0, -15, 0]}
-                                        scale={[0.8, 0.8, 0.8]}
-                                        type="OBJ"
-                                        resources={[
-                                            require('../assets/image/TowerIUT.mtl'),
-                                        ]}
-                                        onClick={() => this.props.setDescriptionVisible()}
-                                        //transformBehaviors={'billboard'}
-                                        rotation={[-90, 0, 40]}
-                                    />
-
                                 </ViroNode>
-
-
                             </ViroARImageMarker>
                             <ViroARImageMarker target={"targetTwo"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND POSTER")}>
                                 <ViroNode>
@@ -147,7 +115,20 @@ class History extends React.Component {
                                         position={[0, -4, 0]}
                                         onClick={this.props.onPressIllustration}
                                         // placeholderSource={require("./res/local_spinner.jpg")}
-                                        source={require("../assets/image/PosterIllustration.png")}
+                                        source={require("../assets/image/Crea.png")}
+                                    />
+                                </ViroNode>
+                            </ViroARImageMarker>
+                            <ViroARImageMarker target={"targetTree"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND POSTER")}>
+                                <ViroNode>
+                                    <ViroImage
+                                        height={2}
+                                        width={2}
+                                        rotation={[-95, 0, 0]}
+                                        position={[0, -4, 0]}
+                                        onClick={this.props.onPressIllustration}
+                                        // placeholderSource={require("./res/local_spinner.jpg")}
+                                        source={require("../assets/image/StratUXAfter.png")}
                                     />
                                 </ViroNode>
                             </ViroARImageMarker>
@@ -166,12 +147,17 @@ class History extends React.Component {
 
 ViroARTrackingTargets.createTargets({
     targetOne: {
-        source: require('../assets/image/QrCode/history_tower.png'),
+        source: require('../assets/image/QrCode/dev.png'),
         orientation: "Up",
         physicalWidth: 0.15, // real world width in meters  
     },
     targetTwo: {
-        source: require('../assets/image/QrCode/history_poster.png'),
+        source: require('../assets/image/QrCode/crea.png'),
+        orientation: "Up",
+        physicalWidth: 0.15, // real world width in meters  
+    },
+    targetTree: {
+        source: require('../assets/image/QrCode/comm.png'),
         orientation: "Up",
         physicalWidth: 0.15, // real world width in meters  
     },
@@ -192,4 +178,4 @@ var styles = StyleSheet.create({
     },
 });
 
-export default (History);
+export default (Formation);

@@ -10,6 +10,7 @@ import { Text } from 'react-native-paper';
 import History from '../component/History';
 import Menu from '../component/CustomComponent/Menu';
 import Map from '../component/CustomComponent/Map';
+import Formation from '../component/Formation';
 
 
 
@@ -45,6 +46,7 @@ class Scan extends React.Component {
     }
 
     render() {
+        console.log('parcours', this.props.parcours)
         return (
             <>
                 {
@@ -183,19 +185,32 @@ class Scan extends React.Component {
                                 <Text style={[styles.helloWorldTextStyle, { paddingTop: 20 }]}>Le Bobigny Matsuri</Text>
                                 <Text style={styles.helloWorldTextStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a molestie ante, quis porta enim. Pellentesque ut rutrum massa, ac ornare leo. Ut ultricies, sapien in pharetra sagittis, risus nunc imperdiet sapien, a interdum risus risus sed ligula. Duis vehicula elit non urna vehicula vehicula.</Text>
                             </SwipeablePanel> */}
-
-                            <ViroARSceneNavigator
+                            {this.props.parcours === 'historique' ? <ViroARSceneNavigator
                                 autofocus={true}
                                 initialScene={{
                                     scene: () => <History
                                         navigation={this.props.navigation}
                                         visible={this._setVisible}
                                         setDescriptionVisible={this._setDescriptionVisible}
-                                        onPressIllustration={() => this.props.navigation.navigate("History")}
+                                        onPressIllustration={() => this.props.navigation.navigate("DescriptionNewspaperIUT")}
                                     />
                                 }}
                                 style={styles.f1}
                             />
+                                :
+                                <ViroARSceneNavigator
+                                    autofocus={true}
+                                    initialScene={{
+                                        scene: () => <Formation
+                                            navigation={this.props.navigation}
+                                            visible={this._setVisible}
+                                            setDescriptionVisible={this._setDescriptionVisible}
+                                            onPressIllustration={() => this.props.navigation.navigate("DescriptionNewspaperIUT")}
+                                        />
+                                    }}
+                                    style={styles.f1}
+                                />}
+
 
                         </>
                 }

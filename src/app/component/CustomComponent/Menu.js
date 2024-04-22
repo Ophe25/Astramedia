@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import CustomButtonMenu from './CustomButtonMenu';
@@ -19,7 +19,11 @@ function Menu(props) {
                 store.dispatch(setMenuIsOpen(true))
             }}
         /> :
-            <View style={{ flex: 1, position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, zIndex: 1, backgroundColor: '#03030E', justifyContent: 'center' }}>
+            <View style={{ flex: 1, position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, zIndex: 1, backgroundColor: '#03030E' }}>
+                <Image
+                    source={require('../../assets/image/Glowlaunchscreen.png')}
+                    style={{ position: 'absolute' }}
+                />
                 {/* Vue pour fermer le menu */}
                 <View
                     style={{
@@ -37,48 +41,70 @@ function Menu(props) {
                     />
                 </View>
                 {/* Boutons des différents parcours */}
-                <View style={{ flex: 4, justifyContent: 'center' }}>
-                    {/* 1ere ligne de boutons */}
-                    <View style={styles.Ligne_de_bouton}>
-                        {/* Bouton Développement web */}
-                        <CustomButtonMenu
-                            ViewStyle={{ marginRight: 10 }}
-                            onPress={() => {
-                                navigation.navigate("Dev")
-                                setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
-                            }}
-                            title={'Développement web'}
-                        />
-                        {/* Bouton Graphisme */}
-                        <CustomButtonMenu
-                            ViewStyle={{ marginLeft: 10 }}
-                            onPress={() => {
-                                navigation.navigate("Crea")
-                                setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
+                <View style={{ flex: 4, justifyContent: 'flex-end', padding: 10 }}>
+                    <Text style={styles.text}>Parcours Formation</Text>
 
-                            }}
-                            title={'Création Numérique'}
-                        />
-                    </View>
+                    {/* Bouton Développement web */}
+                    <CustomButtonMenu
+                        onPress={() => {
+                            navigation.navigate("Dev")
+                            setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
+                        }}
+                        title={'Développement web'}
+                    />
 
-                    {/* 2e ligne de boutons */}
-                    <View style={styles.Ligne_de_bouton}>
-                        {/* Bouton Communication & Strat UX */}
-                        <CustomButtonMenu
-                            ViewStyle={{ marginRight: 10 }}
-                            onPress={() => {
-                                navigation.navigate("Comm")
-                                setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
+                    {/* Bouton Graphisme */}
+                    <CustomButtonMenu
+                        onPress={() => {
+                            navigation.navigate("Crea")
+                            setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
 
-                            }}
-                            title={'Communication & Strat UX'}
-                        />
-                        {/* Bouton Licence Jeux vidéos */}
-                        <CustomButtonMenu
-                            ViewStyle={{ marginLeft: 10 }}
-                            title={'Licence Jeux vidéos'}
-                        />
-                    </View>
+                        }}
+                        title={'Création Numérique'}
+                    />
+
+                    {/* Bouton Communication & Strat UX */}
+                    <CustomButtonMenu
+                        onPress={() => {
+                            navigation.navigate("Comm")
+                            setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
+
+                        }}
+                        title={'Communication & Strat UX'}
+                    />
+
+                    <Text style={styles.text}>Parcours Patrimoine</Text>
+
+                    {/* Bouton Tour de l'IUT */}
+                    <CustomButtonMenu
+                        onPress={() => {
+                            navigation.navigate("Tower")
+                            setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
+
+                        }}
+                        title={'Tour de l\'IUT'}
+                    />
+
+                    {/* Bouton Journal de l'Illustration */}
+                    <CustomButtonMenu
+                        onPress={() => {
+                            navigation.navigate("Newspaper")
+                            setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
+
+                        }}
+                        title={'Journal de l\'Illustration'}
+                    />
+
+                    {/* Bouton Batiment de l'Illustration */}
+                    <CustomButtonMenu
+                        onPress={() => {
+                            navigation.navigate("Illustration")
+                            setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
+
+                        }}
+                        title={'Batiment de l\'Illustration'}
+                    />
+
                 </View>
                 <View style={{ flex: 1 }}>
                     <Text
@@ -108,22 +134,12 @@ function Menu(props) {
 
 var styles = StyleSheet.create({
     text: {
-        color: 'white',
+        fontFamily: 'DarkerGrotesque-Medium',
+        lineHeight: 20,
+        fontSize: 18,
+        color: '#fff',
         textAlign: 'center',
-    },
-    Bouton: {
-        backgroundColor: 'rgba(255,255,255,0.1)',
-        width: 130,
-        height: 130,
-        borderRadius: 12,
-        justifyContent: 'center',
-        paddingHorizontal: 10
-    },
-    Ligne_de_bouton: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignSelf: 'center',
-        paddingBottom: 20
+        paddingVertical: 10
     },
     bouton_text: {
         color: 'white',
