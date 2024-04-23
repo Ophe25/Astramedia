@@ -70,11 +70,13 @@ class DescriptionIllustration extends React.Component {
                         et des objets sont exposés dans un hall permettant de garder
                         une trace de ce lieu historique ancré dans l’histoire de l’université.
                     </Text>
-                    <CustomButton
+                    {this.props.route.params.Scan ? <CustomButton
                         title={'Scanner un autre QR Code'}
                         style={{ marginVertical: 20 }}
                         onPress={() => this.props.navigation.replace("Scan", { parcours: "historique" })}
-                    />
+                    /> :
+                        <></>}
+
                 </ScrollView>
             </View >
 

@@ -90,11 +90,12 @@ class Comm extends React.Component {
                             - Community manager
                         </Text>
                     </View>
-                    <CustomButton
+                    {this.props.route.params.Scan ? <CustomButton
                         title={'Scanner un autre QR Code'}
                         style={{ marginVertical: 20 }}
-                        onPress={() => this.props.navigation.replace("Scan", { parcours: "formation" })}
-                    />
+                        onPress={() => this.props.navigation.replace("Scan", { parcours: "historique" })}
+                    /> :
+                        <></>}
                 </ScrollView>
             </View>
 

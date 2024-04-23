@@ -47,7 +47,7 @@ function Menu(props) {
                     {/* Bouton Développement web */}
                     <CustomButtonMenu
                         onPress={() => {
-                            navigation.navigate("Dev")
+                            navigation.navigate("Dev", { Scan: false })
                             setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
                         }}
                         title={'Développement web'}
@@ -56,7 +56,7 @@ function Menu(props) {
                     {/* Bouton Graphisme */}
                     <CustomButtonMenu
                         onPress={() => {
-                            navigation.navigate("Crea")
+                            navigation.navigate("Crea", { Scan: false })
                             setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
 
                         }}
@@ -66,7 +66,7 @@ function Menu(props) {
                     {/* Bouton Communication & Strat UX */}
                     <CustomButtonMenu
                         onPress={() => {
-                            navigation.navigate("Comm")
+                            navigation.navigate("Comm", { Scan: false })
                             setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
 
                         }}
@@ -78,7 +78,7 @@ function Menu(props) {
                     {/* Bouton Tour de l'IUT */}
                     <CustomButtonMenu
                         onPress={() => {
-                            navigation.navigate("Tower")
+                            navigation.navigate("Tower", { Scan: false })
                             setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
 
                         }}
@@ -88,7 +88,7 @@ function Menu(props) {
                     {/* Bouton Journal de l'Illustration */}
                     <CustomButtonMenu
                         onPress={() => {
-                            navigation.navigate("Newspaper")
+                            navigation.navigate("Newspaper", { Scan: false })
                             setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
 
                         }}
@@ -98,7 +98,7 @@ function Menu(props) {
                     {/* Bouton Batiment de l'Illustration */}
                     <CustomButtonMenu
                         onPress={() => {
-                            navigation.navigate("Illustration")
+                            navigation.navigate("Illustration", { Scan: false })
                             setTimeout(() => store.dispatch(setMenuIsOpen(false)), 500)
 
                         }}

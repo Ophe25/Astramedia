@@ -70,11 +70,12 @@ class DescriptionTowerIUT extends React.Component {
                         En tant que repère évocateur de l'histoire de l'imprimerie et de Bobigny,
                         cette tour demeure un témoignage vivant du passé industriel et culturel de la région.
                     </Text>
-                    <CustomButton
+                    {this.props.route.params.Scan ? <CustomButton
                         title={'Scanner un autre QR Code'}
                         style={{ marginVertical: 20 }}
                         onPress={() => this.props.navigation.replace("Scan", { parcours: "historique" })}
-                    />
+                    /> :
+                        <></>}
                 </ScrollView>
             </View>
 

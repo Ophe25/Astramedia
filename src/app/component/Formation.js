@@ -49,18 +49,6 @@ class Formation extends React.Component {
         }
     }
 
-    // init = () => {
-
-    //     ViroARTrackingTargets.createTargets({
-    //         "targetOne": {
-    //             source: require('../assets/image/iut.jpg'),
-    //             orientation: "Up",
-    //             physicalWidth: 0.1 // real world width in meters  
-    //         },
-    //     });
-
-    // }
-
     // Cette fonction sert à vérifier si l'initialisation de la réalité augmentée est effectuée
 
     _onTrackingUpdated = (state, reason) => {
@@ -157,7 +145,7 @@ ViroARTrackingTargets.createTargets({
         physicalWidth: 0.15, // real world width in meters  
     },
     targetComm: {
-        source: require('../assets/image/QrCode/history_newspaper.png'),
+        source: require('../assets/image/QrCode/comm.png'),
         orientation: "Up",
         physicalWidth: 0.15, // real world width in meters  
     },

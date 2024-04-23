@@ -80,11 +80,12 @@ class DescriptionNewspaperIUT extends React.Component {
                         sa version numérique offre une précieuse source d'informations pour
                         les chercheurs et les passionnés d'histoire.
                     </Text>
-                    <CustomButton
+                    {this.props.route.params.Scan ? <CustomButton
                         title={'Scanner un autre QR Code'}
                         style={{ marginVertical: 20 }}
                         onPress={() => this.props.navigation.replace("Scan", { parcours: "historique" })}
-                    />
+                    /> :
+                        <></>}
                 </ScrollView>
 
             </View>
