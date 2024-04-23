@@ -10,6 +10,7 @@ import History from '../component/History';
 import Menu from '../component/CustomComponent/Menu';
 import Map from '../component/CustomComponent/Map';
 import Formation from '../component/Formation';
+import Icon3 from 'react-native-vector-icons/FontAwesome6';
 
 
 
@@ -61,7 +62,7 @@ class Scan extends React.Component {
                                     width: '100%',
                                     top: 0,
                                     right: 0,
-                                    zIndex: 2,
+                                    zIndex: 1,
                                     backgroundColor: this.state.visible ? "rgba(0,0,0, 0.10)" : "rgba(0,0,0, 0.50)",
                                     paddingVertical: 18,
                                     flexDirection: 'row',
@@ -70,12 +71,20 @@ class Scan extends React.Component {
                                     paddingLeft: 70,
                                 }}
                             >
+                                {this.state.visible ?
+                                    <View style={{ position: 'absolute', right: 54, top: 20 }}>
+                                        <Icon3
+                                            name="arrow-right-long"
+                                            size={20}
+                                            color="white"
+                                        />
+                                    </View> : <></>}
                                 <View style={{
                                     backgroundColor: this.state.visible ? "rgba(255,255,255, 0.20)" : "rgba(255,255,255, 0)",
                                     borderRadius: 99,
                                     padding: 25,
                                     position: 'absolute',
-                                    top: 0,
+                                    top: 5,
                                     right: -3.5
                                 }}>
                                 </View>
@@ -84,7 +93,6 @@ class Scan extends React.Component {
                                     paddingBottom: 0,
                                     fontSize: 18
                                 }]}>Parcours {this.props.route.params.parcours === 'formation' ? 'formation' : 'patrimoine'}</Text>
-
                                 <Icon
                                     name="map-outline"
                                     size={22}
@@ -107,22 +115,12 @@ class Scan extends React.Component {
                                         bottom: 0,
                                         right: 0,
                                         zIndex: 1,
-                                        backgroundColor: "rgba(0,0,0, 0.50)",
+                                        backgroundColor: "rgba(0,0,0, 0.70)",
                                         textAlign: 'center'
                                     }}>
                                     {this.state.carteIsOpen ?
-                                        // <TouchableOpacity
-                                        //     style={{ justifyContent: 'center', flex: 1, paddingHorizontal: 20 }}
-                                        //     onPress={() => this.setState({ visible: false, carteIsOpen: false })}
-                                        // >
-                                        //     <Text style={styles.helloWorldTextStyle}>Point suivant : salle 228</Text>
-
-                                        //     <Image
-                                        //         source={require('../assets/image/carte.png')}
-                                        //     />
-                                        // </TouchableOpacity>
                                         <Map
-                                            style={{ justifyContent: 'center', flex: 1, paddingHorizontal: 20 }}
+                                            style={{ justifyContent: 'center', flex: 1, paddingHorizontal: 20, zIndex: 2 }}
                                             onPress={() => this.setState({ visible: false, carteIsOpen: false })}
                                         />
                                         :
@@ -136,16 +134,6 @@ class Scan extends React.Component {
                                 :
                                 <></>
                             }
-
-                            {/* <SwipeablePanel
-                                isActive={this.state.descriptionVisible}
-                                fullWidth={true}
-                                onClose={() => this.setState({ descriptionVisible: false })}
-                                style={{ backgroundColor: 'black' }}
-                            >
-                                <Text style={[styles.helloWorldTextStyle, { paddingTop: 20 }]}>Le Bobigny Matsuri</Text>
-                                <Text style={styles.helloWorldTextStyle}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a molestie ante, quis porta enim. Pellentesque ut rutrum massa, ac ornare leo. Ut ultricies, sapien in pharetra sagittis, risus nunc imperdiet sapien, a interdum risus risus sed ligula. Duis vehicula elit non urna vehicula vehicula.</Text>
-                            </SwipeablePanel> */}
                             {this.props.route.params.parcours === 'historique' ? <ViroARSceneNavigator
                                 autofocus={true}
                                 initialScene={{

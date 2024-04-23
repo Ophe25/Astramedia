@@ -35,8 +35,8 @@ class Step2 extends React.Component {
                         color={'#fff'}
                         style={{ textAlign: 'center', paddingBottom: 10 }}
                     />
-                    <Text style={{ color: 'white', textAlign: 'center' }}>Mettez des écouteurs</Text>
-                    <Text style={{ color: 'white', textAlign: 'center' }}>
+                    <Text style={styles.Titre}>Mettez des écouteurs</Text>
+                    <Text style={styles.Text}>
                         Pour une meilleure expérience, nous vous conseillons de mettre des écouteurs ou bien un casque audio.
                     </Text>
                 </View>
@@ -55,5 +55,31 @@ class Step2 extends React.Component {
         );
     }
 }
+
+var styles = StyleSheet.create({
+    Titre: {
+        fontFamily: 'DarkerGrotesque-Medium',
+        textAlign: 'center',
+        marginBottom: 15,
+        color: 'white',
+        fontSize: 20,
+        paddingTop: 15,
+        paddingBottom: 15,
+    },
+    Text: {
+        fontFamily: 'DarkerGrotesque-Medium',
+        lineHeight: 20,
+        fontSize: 15,
+        color: '#fff',
+        textAlign: 'center',
+    },
+    Image: {
+        aspectRatio: 500 / 750,
+        width: '100%',
+        height: undefined,
+        marginVertical: 15
+    }
+});
+
 
 export default (Step2);

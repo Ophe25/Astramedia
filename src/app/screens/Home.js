@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 import { Text } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../component/CustomComponent/CustomButton';
@@ -41,7 +41,7 @@ class Home extends React.Component {
                         </View> */}
 
                 <View style={{ flex: 4, justifyContent: 'flex-end' }}>
-                    <Text style={{ textAlign: 'center', marginBottom: 15, color: 'white' }}>Choisissez un parcours :</Text>
+                    <Text style={styles.Titre}>Choisissez un parcours :</Text>
 
                     <CustomButton
                         title={'Parcours Formation'}
@@ -51,7 +51,7 @@ class Home extends React.Component {
                         }}
 
                     />
-                    <Text style={{ textAlign: 'center', marginBottom: 30, marginTop: 10, paddingHorizontal: 20, color: 'white' }}>
+                    <Text style={styles.Text}>
                         Vous aimeriez en savoir plus sur la formation Métiers du Multimédia et de l’Internet
                     </Text>
                     <CustomButton
@@ -62,7 +62,7 @@ class Home extends React.Component {
                         }}
 
                     />
-                    <Text style={{ textAlign: 'center', marginBottom: 45, marginTop: 10, paddingHorizontal: 20, color: 'white' }}>
+                    <Text style={styles.Text}>
                         Vous aimeriez découvrir le lieu et l’histoire de votre futur établissement
                     </Text>
 
@@ -74,5 +74,29 @@ class Home extends React.Component {
         );
     }
 }
+
+var styles = StyleSheet.create({
+    Titre: {
+        fontFamily: 'DarkerGrotesque-Medium',
+        textAlign: 'center',
+        marginBottom: 15,
+        color: 'white',
+        fontSize: 20,
+        paddingTop: 15,
+        paddingBottom: 15,
+    },
+    Text: {
+        fontFamily: 'DarkerGrotesque-Medium',
+        lineHeight: 20,
+        fontSize: 15,
+        color: '#fff',
+        textAlign: 'center',
+        marginBottom: 45,
+        marginTop: 10,
+        paddingHorizontal: 20
+    },
+});
+
+
 
 export default (Home);

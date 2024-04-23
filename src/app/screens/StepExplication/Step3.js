@@ -34,9 +34,11 @@ class Step3 extends React.Component {
                         color={'#fff'}
                         style={{ textAlign: 'center', paddingBottom: 10, paddingBottom: 30 }}
                     />
-                    <Text style={{ color: 'white', textAlign: 'center' }}>Plongez dans notre univers</Text>
-                    <Text style={{ color: 'white', textAlign: 'center' }}>
+                    <Text style={styles.Titre}>Plongez dans notre univers</Text>
+                    <Text style={styles.Text}>
                         Plongez dans un monde où l’éducation se mèle à l’innovation !
+                        Découvrez la formation MMI ainsi que l'histoire du bâtiment en cherchant des QR Codes
+                        mis dans certains endroits. Scannez les pour découvrir les objets cachés en réalité augmentée.
                     </Text>
                 </View>
 
@@ -69,6 +71,32 @@ class Step3 extends React.Component {
         );
     }
 }
+
+var styles = StyleSheet.create({
+    Titre: {
+        fontFamily: 'DarkerGrotesque-Medium',
+        textAlign: 'center',
+        marginBottom: 15,
+        color: 'white',
+        fontSize: 20,
+        paddingTop: 15,
+        paddingBottom: 15,
+    },
+    Text: {
+        fontFamily: 'DarkerGrotesque-Medium',
+        lineHeight: 20,
+        fontSize: 15,
+        color: '#fff',
+        textAlign: 'center',
+    },
+    Image: {
+        aspectRatio: 500 / 750,
+        width: '100%',
+        height: undefined,
+        marginVertical: 15
+    }
+});
+
 
 const mapStateToProps = state => ({
     isFirstConnection: state.connection.isFirstConnection,
