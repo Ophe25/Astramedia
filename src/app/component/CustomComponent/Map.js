@@ -7,6 +7,7 @@ class Map extends React.Component {
 
     render() {
         return (
+            // Ce composant est la carte affiché lors du clique sur l'icon "carte"
             <TouchableOpacity
                 style={{ flex: 1, padding: 15 }}
                 onPress={this.props.onPress}

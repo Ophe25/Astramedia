@@ -13,6 +13,7 @@ import { useNavigation } from '@react-navigation/core'
 function Menu(props) {
     const navigation = useNavigation();
     return (
+        // Ce composant est le menu d'où on peut accéder aux description ainsi que revenir à l'accueil
         !props.menuIsOpen ? <ButtonMenu
             onPress={() => {
                 console.log('test', props)

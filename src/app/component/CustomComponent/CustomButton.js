@@ -7,6 +7,7 @@ class CustomButton extends React.Component {
     render() {
         const { commande, displayDetailForCommande } = this.props;
         return (
+            // Ce composant est un bouton qui est intégré dans tous les écrans comportant des boutons sauf le menu
             <Button
                 textColor='#FFF'
                 labelStyle={{ fontSize: 20, lineHeight: 30 }}

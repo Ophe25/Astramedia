@@ -8,6 +8,7 @@ class CustomButtonMenu extends React.Component {
     render() {
         const { commande, displayDetailForCommande } = this.props;
         return (
+            // Ce composant est un bouton du menu qui est intégré dans le menu "hors ligne" pour accéder aux descriptions
             <View
                 style={this.props.ViewStyle ? this.props.ViewStyle : {}}>
                 <Button

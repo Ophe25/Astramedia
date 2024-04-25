@@ -9,6 +9,7 @@ class ButtonMenu extends React.Component {
     render() {
         const { commande, displayDetailForCommande } = this.props;
         return (
+            // Ce composant est le bouton afin d'accéder au menu, celui-ci est intégré dans tous les écrans sauf logoSpin
             <View
                 style={[{
                     position: this.props.relative ? 'relative' : 'absolute',
