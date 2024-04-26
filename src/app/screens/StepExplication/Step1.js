@@ -24,12 +24,6 @@ class Step1 extends React.Component {
                     source={require('../../assets/image/GlowStep1.png')}
                     style={{ position: 'absolute' }}
                 />
-                {/*<View style={{ flex: 1, justifyContent: 'center', marginTop: 150 }}>
-                    <Image
-                        source={require('../../assets/image/GlowStep1.png')}
-                        style={{ height: 200, width: 200, alignSelf: 'center', justifyContent: 'center', paddingBottom: 20 }}
-        />
-                </View>*/}
                 <View style={{ flex: 1, alignSelf: 'center', paddingVertical: 90, justifyContent: 'center' }}>
                     <Icon
                         name="hand-wave"

@@ -1,7 +1,5 @@
 import React from 'react';
-import { View, } from 'react-native';
 import { PaperProvider, configureFonts, MD3LightTheme } from 'react-native-paper';
-// import ConfigureStore from './src/app/redux/store/ConfigureStore';
 import AppContainer from './src/app/AppContainer';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';

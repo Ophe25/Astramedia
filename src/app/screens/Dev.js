@@ -1,14 +1,7 @@
 import React from 'react';
 import { View, Image, ScrollView, StyleSheet, BackHandler } from 'react-native';
 import { Text } from 'react-native-paper';
-import Menu from '../component/CustomComponent/Menu';
-import ButtonMenu from '../component/CustomComponent/ButtonMenu';
 import CustomButton from '../component/CustomComponent/CustomButton';
-// import Menu from '../Menu/Menu';
-
-// Bouton Scannez un autre qr code renvoie par parcours
-// zIndex Carte
-// Bouton quitter appli
 
 class Dev extends React.Component {
     constructor(props) {
@@ -126,11 +119,9 @@ class Dev extends React.Component {
 var styles = StyleSheet.create({
     Titre: {
         fontFamily: 'DarkerGrotesque-Medium',
-        // textAlign: 'center',
         marginBottom: 15,
         color: 'white',
         fontSize: 20,
-        // paddingTop: 15,
         paddingBottom: 15,
         paddingLeft: 50
     },

@@ -1,11 +1,7 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { Text } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../component/CustomComponent/CustomButton';
-import ButtonMenu from '../component/CustomComponent/ButtonMenu';
-import Menu from '../component/CustomComponent/Menu';
-// import Menu from '../Menu/Menu';
 
 
 
@@ -26,20 +22,6 @@ class Home extends React.Component {
                     source={require('../assets/image/GlowHome.png')}
                     style={{ position: 'absolute', bottom: 0 }}
                 />
-                {/* <View
-                            style={{
-                                flex: 1,
-                                // alignItems: 'flex-end',
-                            }}
-                        >
-                            <Icon
-                                name="menu"
-                                size={30}
-                                color="white"
-                                onPress={() => this.setState({ isOpen: true })}
-                            />
-                        </View> */}
-
                 <View style={{ flex: 4, justifyContent: 'flex-end' }}>
                     <Text style={styles.Titre}>Choisissez un parcours :</Text>
 

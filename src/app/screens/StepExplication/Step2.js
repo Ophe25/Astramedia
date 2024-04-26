@@ -20,14 +20,6 @@ class Step2 extends React.Component {
                     source={require('../../assets/image/GlowStep2.png')}
                     style={{ position: 'absolute', right: 0 }}
                 />
-                {/* <View style={{ flex: 1, justifyContent: 'center', marginTop: 150 }}>
-                    <Image
-                        source={require('../../../../assets/image/GlowStep2.png')}
-                        style={{ height: 200, width: 200, alignSelf: 'center', justifyContent: 'center', paddingBottom: 20 }}
-                    />
-                </View> */}
-
-
                 <View style={{ flex: 1, justifyContent: 'center', paddingVertical: 90 }}>
                     <Icon
                         name="headset-outline"

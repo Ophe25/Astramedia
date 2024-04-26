@@ -1,22 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import {
     ViroARScene,
     ViroText,
     ViroTrackingStateConstants,
-    ViroARSceneNavigator,
     ViroARTrackingTargets,
-    Viro3DObject,
     ViroARImageMarker,
-    ViroBox,
-    ViroOmniLight,
     ViroAmbientLight,
-    ViroSpotLight,
-    ViroMaterials,
     ViroNode,
-    ViroQuad,
-    ViroScene,
-    ViroCamera,
     ViroImage,
 } from '@viro-community/react-viro';
 

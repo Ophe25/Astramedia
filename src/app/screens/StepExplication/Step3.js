@@ -25,8 +25,6 @@ class Step3 extends React.Component {
                     source={require('../../assets/image/GlowStep3.png')}
                     style={{ position: 'absolute', right: 0 }}
                 />
-
-
                 <View style={{ justifyContent: 'center', flex: 5, paddingVertical: 90 }}>
                     <Icon
                         name="rocket-outline"
@@ -41,18 +39,6 @@ class Step3 extends React.Component {
                         mis dans certains endroits. Scannez les pour découvrir les objets cachés en réalité augmentée.
                     </Text>
                 </View>
-
-                {/* <View style={{ justifyContent: 'flex-end', flex: 1 }}>
-                        <CustomButton
-                            backgroundColor='rgba(255, 255, 255, 0.1)'
-                            title="C'est parti !"
-                            style={{}}
-                            onPress={() => {
-                                this.props.navigation.navigate("Home")
-
-                            }}
-                        />
-                    </View> */}
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <Button
                         onPress={() => this.props.navigation.goBack()}

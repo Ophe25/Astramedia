@@ -1,11 +1,7 @@
 import React from 'react';
 import { View, Image, ScrollView, StyleSheet, BackHandler } from 'react-native';
 import { Text } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../component/CustomComponent/CustomButton';
-import ButtonMenu from '../component/CustomComponent/ButtonMenu';
-import Menu from '../component/CustomComponent/Menu';
-// import Menu from '../Menu/Menu';
 
 
 

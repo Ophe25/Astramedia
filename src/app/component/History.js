@@ -1,22 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import {
     ViroARScene,
     ViroText,
     ViroTrackingStateConstants,
-    ViroARSceneNavigator,
     ViroARTrackingTargets,
     Viro3DObject,
     ViroARImageMarker,
-    ViroBox,
-    ViroOmniLight,
     ViroAmbientLight,
     ViroSpotLight,
-    ViroMaterials,
     ViroNode,
-    ViroQuad,
-    ViroScene,
-    ViroCamera,
     ViroImage,
 } from '@viro-community/react-viro';
 
@@ -47,18 +40,6 @@ class History extends React.Component {
             // Handle loss of tracking
         }
     }
-
-    // init = () => {
-
-    //     ViroARTrackingTargets.createTargets({
-    //         "targetOne": {
-    //             source: require('../assets/image/iut.jpg'),
-    //             orientation: "Up",
-    //             physicalWidth: 0.1 // real world width in meters  
-    //         },
-    //     });
-
-    // }
 
     // Cette fonction sert à vérifier si l'initialisation de la réalité augmentée est effectuée
 

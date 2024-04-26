@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Button } from 'react-native-paper';
 
 
 class Map extends React.Component {
