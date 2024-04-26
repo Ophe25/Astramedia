@@ -26,6 +26,7 @@ class TowerIUT extends React.Component {
 
     render() {
         return (
+            // Ce composant est 
             <ViroNode>
                 {/* 1ere lumière */}
                 <ViroSpotLight

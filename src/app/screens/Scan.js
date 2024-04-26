@@ -12,10 +12,6 @@ import Map from '../component/CustomComponent/Map';
 import Formation from '../component/Formation';
 import Icon3 from 'react-native-vector-icons/FontAwesome6';
 
-
-
-
-
 class Scan extends React.Component {
     constructor(props) {
         super(props);
@@ -29,7 +25,6 @@ class Scan extends React.Component {
     }
 
     onInitialized = (state, reason) => {
-        console.log('guncelleme', state, reason, this.state.text);
         if (state === ViroTrackingStateConstants.TRACKING_NORMAL) {
             this.setState({ text: 'Hello World!' });
         } else if (state === ViroTrackingStateConstants.TRACKING_NONE) {
@@ -46,7 +41,6 @@ class Scan extends React.Component {
     }
 
     render() {
-        console.log('parcours', this.props.route.params.parcours)
         return (
             <>
                 {
@@ -62,7 +56,7 @@ class Scan extends React.Component {
                                     width: '100%',
                                     top: 0,
                                     right: 0,
-                                    zIndex: 1,
+                                    zIndex: 2,
                                     backgroundColor: this.state.visible ? "rgba(0,0,0, 0.10)" : "rgba(0,0,0, 0.50)",
                                     paddingVertical: 18,
                                     flexDirection: 'row',
@@ -71,28 +65,30 @@ class Scan extends React.Component {
                                     paddingLeft: 70,
                                 }}
                             >
-                                {this.state.visible ?
-                                    <View style={{ position: 'absolute', right: 54, top: 20 }}>
-                                        <Icon3
-                                            name="arrow-right-long"
-                                            size={20}
-                                            color="white"
-                                        />
-                                    </View> : <></>}
+                                <Text style={[styles.helloWorldTextStyle, {
+                                    justifyContent: 'center',
+                                    paddingBottom: 0,
+                                    fontSize: 18
+                                }]}>Parcours {this.props.route.params.parcours === 'formation' ? 'formation' : 'patrimoine'}</Text>
                                 <View style={{
                                     backgroundColor: this.state.visible ? "rgba(255,255,255, 0.20)" : "rgba(255,255,255, 0)",
                                     borderRadius: 99,
                                     padding: 25,
                                     position: 'absolute',
                                     top: 5,
-                                    right: -3.5
+                                    right: -3.5,
                                 }}>
                                 </View>
-                                <Text style={[styles.helloWorldTextStyle, {
-                                    justifyContent: 'center',
-                                    paddingBottom: 0,
-                                    fontSize: 18
-                                }]}>Parcours {this.props.route.params.parcours === 'formation' ? 'formation' : 'patrimoine'}</Text>
+                                {this.state.visible ?
+                                    <View style={{
+                                        position: 'absolute', right: 54, top: 20,
+                                    }}>
+                                        <Icon3
+                                            name="arrow-right-long"
+                                            size={20}
+                                            color="white"
+                                        />
+                                    </View> : <></>}
                                 <Icon
                                     name="map-outline"
                                     size={22}
@@ -114,7 +110,7 @@ class Scan extends React.Component {
                                         left: 0,
                                         bottom: 0,
                                         right: 0,
-                                        zIndex: 1,
+                                        zIndex: 4,
                                         backgroundColor: "rgba(0,0,0, 0.70)",
                                         textAlign: 'center'
                                     }}>
@@ -156,9 +152,9 @@ class Scan extends React.Component {
                                             navigation={this.props.navigation}
                                             visible={this._setVisible}
                                             setDescriptionVisible={this._setDescriptionVisible}
-                                            onPressDev={() => this.props.navigation.replace("Dev")}
-                                            onPressCrea={() => this.props.navigation.replace("Crea")}
-                                            onPressComm={() => this.props.navigation.replace("Comm")}
+                                            onPressDev={() => this.props.navigation.replace("Dev", { Scan: true })}
+                                            onPressCrea={() => this.props.navigation.replace("Crea", { Scan: true })}
+                                            onPressComm={() => this.props.navigation.replace("Comm", { Scan: true })}
                                         />
                                     }}
                                     style={styles.f1}

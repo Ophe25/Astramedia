@@ -1,11 +1,7 @@
 import React from 'react';
 import { View, Image, ScrollView, StyleSheet, BackHandler } from 'react-native';
 import { Text } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../component/CustomComponent/CustomButton';
-import ButtonMenu from '../component/CustomComponent/ButtonMenu';
-import Menu from '../component/CustomComponent/Menu';
-// import Menu from '../Menu/Menu';
 
 
 
@@ -61,7 +57,7 @@ class DescriptionTowerIUT extends React.Component {
                         on stockait l'eau nécessaire à une technique d'impression en pointe à l'époque,
                         l'héliogravure.
                     </Text>
-                    <Text style={styles.Text}>
+                    <Text style={[styles.Text, { marginBottom: 20 }]}>
                         Aujourd'hui, après une réhabilitation soignée,
                         la Tour de l'Ancienne Imprimerie est transformée en logements.
                         Entrant en service à la rentrée universitaire 2009,
@@ -105,6 +101,7 @@ var styles = StyleSheet.create({
         aspectRatio: 130 / 280,
         width: '50%',
         height: undefined,
+        alignSelf: 'center',
         marginVertical: 15
     }
 });

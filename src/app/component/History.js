@@ -41,7 +41,6 @@ class History extends React.Component {
     }
 
     onInitialized = (state, reason) => {
-        console.log('guncelleme', state, reason);
         if (state === ViroTrackingStateConstants.TRACKING_NORMAL) {
             this.setState({ text: 'Hello World!' });
         } else if (state === ViroTrackingStateConstants.TRACKING_NONE) {
@@ -93,7 +92,7 @@ class History extends React.Component {
                             <ViroARImageMarker target={"target"} onAnchorFound={() => this.props.visible()}>
                             </ViroARImageMarker>
                             {/* Objets mis en scène lors de la reconnaissance du QR Code */}
-                            <ViroARImageMarker target={"targetTower"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND")}>
+                            <ViroARImageMarker target={"targetTower"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND Tower")}>
                                 <ViroNode>
                                     {/* 1ere lumière */}
                                     <ViroSpotLight

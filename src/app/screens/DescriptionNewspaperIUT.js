@@ -73,7 +73,7 @@ class DescriptionNewspaperIUT extends React.Component {
                         sa version numérique offre une précieuse source d'informations pour
                         les chercheurs et les passionnés d'histoire.
                     </Text>
-                    <Text style={styles.Text}>
+                    <Text style={[styles.Text, { marginBottom: 20 }]}>
                         Aujourd'hui, ce journal vit une nouvelle ère numérique,
                         accessible dans son intégralité depuis mars 2013 sur Internet.
                         vec 5293 numéros et environ 180 000 pages,
@@ -111,10 +111,9 @@ var styles = StyleSheet.create({
         textAlign: 'left',
     },
     Image: {
-        // aspectRatio: 280 / 570,
-        // width: '100%',
-        // height: undefined,
-        marginVertical: 15
+        marginVertical: 15,
+        alignSelf: 'center',
+
     }
 });
 

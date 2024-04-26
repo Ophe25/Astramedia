@@ -93,7 +93,7 @@ class Comm extends React.Component {
                     {this.props.route.params.Scan ? <CustomButton
                         title={'Scanner un autre QR Code'}
                         style={{ marginVertical: 20 }}
-                        onPress={() => this.props.navigation.replace("Scan", { parcours: "historique" })}
+                        onPress={() => this.props.navigation.replace("Scan", { parcours: "formation" })}
                     /> :
                         <></>}
                 </ScrollView>
@@ -125,6 +125,7 @@ var styles = StyleSheet.create({
         aspectRatio: 280 / 570,
         width: '100%',
         height: undefined,
+        alignSelf: 'center',
         marginVertical: 15
     }
 });

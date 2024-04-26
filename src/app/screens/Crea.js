@@ -107,8 +107,9 @@ class Crea extends React.Component {
                     {this.props.route.params.Scan ? <CustomButton
                         title={'Scanner un autre QR Code'}
                         style={{ marginVertical: 20 }}
-                        onPress={() => this.props.navigation.replace("Scan", { parcours: "historique" })}
-                    /> :
+                        onPress={() => this.props.navigation.replace("Scan", { parcours: "formation" })}
+                    />
+                        :
                         <></>}
                 </ScrollView>
             </View>
@@ -139,7 +140,9 @@ var styles = StyleSheet.create({
         aspectRatio: 500 / 750,
         width: '100%',
         height: undefined,
-        marginVertical: 15
+        marginVertical: 15,
+        alignSelf: 'center',
+
     }
 });
 

@@ -6,7 +6,9 @@ import ButtonMenu from '../component/CustomComponent/ButtonMenu';
 import CustomButton from '../component/CustomComponent/CustomButton';
 // import Menu from '../Menu/Menu';
 
-
+// Bouton Scannez un autre qr code renvoie par parcours
+// zIndex Carte
+// Bouton quitter appli
 
 class Dev extends React.Component {
     constructor(props) {
@@ -51,8 +53,14 @@ class Dev extends React.Component {
                     <Text style={styles.Text}>
                         Il prépare les futurs étudiants aux enjeux du développement
                         d’applications et sites web par l’apprentissage de divers ou outils et langages
-                        tel que Affinity, Javascript, C++, PHP etc.
+                        tel que Affinity, Javascript, PHP, Flutter, React Native,  etc.
                     </Text>
+                    <View>
+                        <Image
+                            source={require('../assets/image/DevReactNative.jpg')}
+                            style={styles.Image}
+                        />
+                    </View>
                     <Text style={styles.Text}>
                         En s’appuyant sur la compétence “Développer”,
                         ce parcours met l’accent sur le code afin d’atteindre une
@@ -61,8 +69,8 @@ class Dev extends React.Component {
                     </Text>
                     <View>
                         <Image
-                            source={require('../assets/image/Commat.png')}
-                            style={styles.Image}
+                            source={require('../assets/image/DevProj1.png')}
+                            style={styles.Image2}
                         />
                     </View>
                     <Text style={styles.Text}>
@@ -77,10 +85,10 @@ class Dev extends React.Component {
                     </Text>
                     <View style={{ paddingLeft: 15 }}>
                         <Text style={styles.List}>
-                            - Intégrateur web
+                            - Intégrateur web /multimédia
                         </Text>
                         <Text style={styles.List}>
-                            - Développeur web
+                            - Développeur web, front, back et full-stack
                         </Text>
                         <Text style={styles.List}>
                             - Directeur de systèmes d’information
@@ -88,11 +96,23 @@ class Dev extends React.Component {
                         <Text style={styles.List}>
                             - Ingénieur
                         </Text>
+                        <Text style={styles.List}>
+                            - Intégrateur d’application
+                        </Text>
+                        <Text style={styles.List}>
+                            - Développeur d’applications mobiles
+                        </Text>
+                        <Text style={styles.List}>
+                            - Intégrateur de dispositifs interactifs
+                        </Text>
+                        <Text style={styles.List}>
+                            - Assistant chef de projet Web
+                        </Text>
                     </View>
                     {this.props.route.params.Scan ? <CustomButton
                         title={'Scanner un autre QR Code'}
                         style={{ marginVertical: 20 }}
-                        onPress={() => this.props.navigation.replace("Scan", { parcours: "historique" })}
+                        onPress={() => this.props.navigation.replace("Scan", { parcours: "formation" })}
                     /> :
                         <></>}
                 </ScrollView>
@@ -130,10 +150,18 @@ var styles = StyleSheet.create({
         textAlign: 'left',
     },
     Image: {
+        aspectRatio: 150 / 350,
+        width: '50%',
+        height: undefined,
+        marginVertical: 15,
+        alignSelf: 'center',
+    },
+    Image2: {
         aspectRatio: 570 / 450,
         width: '100%',
         height: undefined,
-        marginVertical: 15
+        marginVertical: 15,
+        alignSelf: 'center',
     }
 });
 

@@ -64,7 +64,7 @@ class DescriptionIllustration extends React.Component {
                             style={styles.Image}
                         />
                     </View>
-                    <Text style={styles.Text}>
+                    <Text style={[styles.Text, { marginBottom: 20 }]}>
                         L’histoire du bâtiment est encore présente actuellement.
                         En effet, certaines fondations ont été conservées en l’état
                         et des objets sont exposés dans un hall permettant de garder
@@ -106,6 +106,7 @@ var styles = StyleSheet.create({
         aspectRatio: 570 / 280,
         width: '100%',
         height: undefined,
+        alignSelf: 'center',
         marginVertical: 15
     }
 });

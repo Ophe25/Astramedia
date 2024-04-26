@@ -41,7 +41,6 @@ class Formation extends React.Component {
     }
 
     onInitialized = (state, reason) => {
-        console.log('guncelleme', state, reason);
         if (state === ViroTrackingStateConstants.TRACKING_NORMAL) {
             this.setState({ text: 'Hello World!' });
         } else if (state === ViroTrackingStateConstants.TRACKING_NONE) {
@@ -81,7 +80,7 @@ class Formation extends React.Component {
                             <ViroARImageMarker target={"target"} onAnchorFound={() => this.props.visible()}>
                             </ViroARImageMarker>
                             {/* Objets mis en scène lors de la reconnaissance du QR Code */}
-                            <ViroARImageMarker target={"targetDev"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND")}>
+                            <ViroARImageMarker target={"targetDev"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND Dev")}>
                                 <ViroNode>
                                     <ViroImage
                                         height={2}
@@ -90,11 +89,11 @@ class Formation extends React.Component {
                                         position={[0, -4, 0]}
                                         onClick={this.props.onPressDev}
                                         // placeholderSource={require("./res/local_spinner.jpg")}
-                                        source={require("../assets/image/Commat.png")}
+                                        source={require("../assets/image/DevProj1.png")}
                                     />
                                 </ViroNode>
                             </ViroARImageMarker>
-                            <ViroARImageMarker target={"targetCrea"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND POSTER")}>
+                            <ViroARImageMarker target={"targetCrea"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND Crea")}>
                                 <ViroNode>
                                     <ViroImage
                                         height={2}
@@ -107,7 +106,7 @@ class Formation extends React.Component {
                                     />
                                 </ViroNode>
                             </ViroARImageMarker>
-                            <ViroARImageMarker target={"targetComm"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND POSTER")}>
+                            <ViroARImageMarker target={"targetComm"} pauseUpdates={false} onAnchorFound={() => console.log("FOUND Comm")}>
                                 <ViroNode>
                                     <ViroImage
                                         height={2}
