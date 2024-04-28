@@ -107,7 +107,7 @@ class History extends React.Component {
                                         scale={[0.8, 0.8, 0.8]}
                                         type="OBJ"
                                         resources={[
-                                            require('../assets/image/TowerIUT.mtl'),
+                                            require('../assets/image/TextureTowerIUT.mtl'),
                                         ]}
                                         onClick={this.props.onPressTower}
                                         //transformBehaviors={'billboard'}

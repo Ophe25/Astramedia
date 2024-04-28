@@ -49,20 +49,21 @@ class Scan extends React.Component {
                         width: '100%',
                         top: 0,
                         right: 0,
-                        zIndex: 2,
+                        zIndex: this.state.carteIsOpen ? 2 : 5,
                         backgroundColor: this.state.visible ? "rgba(0,0,0, 0.10)" : "rgba(0,0,0, 0.50)",
                         paddingVertical: 18,
                         flexDirection: 'row',
-                        justifyContent: 'space-between',
+                        justifyContent: this.state.visible || this.state.carteIsOpen ? 'flex-end' : 'space-between',
                         alignItems: 'center',
                         paddingLeft: 70,
                     }}
                 >
-                    <Text style={[styles.helloWorldTextStyle, {
+                    {this.state.visible || this.state.carteIsOpen ? <></> : <Text style={[styles.helloWorldTextStyle, {
                         justifyContent: 'center',
                         paddingBottom: 0,
                         fontSize: 18
-                    }]}>Parcours {this.props.route.params.parcours === 'formation' ? 'formation' : 'patrimoine'}</Text>
+                    }]}>Parcours {this.props.route.params.parcours === 'formation' ? 'formation' : 'patrimoine'}
+                    </Text>}
                     <View style={{
                         backgroundColor: this.state.visible ? "rgba(255,255,255, 0.20)" : "rgba(255,255,255, 0)",
                         borderRadius: 99,
@@ -86,7 +87,7 @@ class Scan extends React.Component {
                         name="map-outline"
                         size={22}
                         color="white"
-                        onPress={() => this.setState({ carteIsOpen: true })}
+                        onPress={() => this.setState({ carteIsOpen: true, visible: false })}
                         style={{
                             paddingRight: 10,
                         }}

@@ -1,6 +1,6 @@
 # Blender 3.6.4
 # www.blender.org
-mtllib TowerIUT.mtl
+mtllib TextureTowerIUT.mtl
 o Cube
 v 1.000000 6.390937 -0.785934
 v 1.000000 0.460719 -0.785934
